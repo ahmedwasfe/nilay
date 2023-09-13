@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>658437993272-n50v03soq8lpp20b3vr259fj3k7iou32.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.658437993272-n50v03soq8lpp20b3vr259fj3k7iou32</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>658437993272-jh77s154t5edia3og6ms36ki9p3ghs9j.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBYe6firb21hyS-ngKZ2C4dV9EbPUxNRIc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>658437993272</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.techmagic.nilay</string>
+	<key>PROJECT_ID</key>
+	<string>nilay-55de3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>nilay-55de3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:658437993272:ios:78c6d92f45f8347a6b07cd</string>
+</dict>
+</plist>

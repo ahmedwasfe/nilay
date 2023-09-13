@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string name="app_name">Nilay</string>
+
+    <string name="facebook_app_id">969250197649481</string>
+    <string name="fb_login_protocol_scheme">fb969250197649481</string>
+    <string name="facebook_client_token">c8c8a3f1ac79ad4474a1a50c543f8819</string>
+
+</resources>

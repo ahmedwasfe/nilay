@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "52013668616",
+    "project_id": "nilay-b70fd",
+    "storage_bucket": "nilay-b70fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:52013668616:android:152469b9109f901142b4bd",
+        "android_client_info": {
+          "package_name": "com.techmagic.nilay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "52013668616-h32aheno8k740jdsjkhfq2i54vevroc7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD67ctuEVFACUUtrasbhNeo5sB3eoov6Qc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "52013668616-h32aheno8k740jdsjkhfq2i54vevroc7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
