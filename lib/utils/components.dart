@@ -152,7 +152,12 @@ class CachedImage extends StatelessWidget {
   BoxFit fit = BoxFit.cover;
   bool isLoading = true;
 
-  CachedImage({required this.imageUrl, this.width = 272, this.height = 159, this.fit = BoxFit.cover, this.isLoading = true});
+  CachedImage(
+      {required this.imageUrl,
+      this.width = 272,
+      this.height = 159,
+      this.fit = BoxFit.cover,
+      this.isLoading = true});
 
   @override
   Widget build(BuildContext context) {
@@ -162,7 +167,8 @@ class CachedImage extends StatelessWidget {
         fit: BoxFit.cover,
         imageUrl: imageUrl,
         // placeholder: (_, imageurl) => Container(),
-        progressIndicatorBuilder: (_, imageUrl, downloaded) => isLoading ? AppWidgets.CustomAnimationProgress() : Container(),
+        progressIndicatorBuilder: (_, imageUrl, downloaded) =>
+            isLoading ? AppWidgets.CustomAnimationProgress() : Container(),
         // fadeOutCurve: Curves.,
         errorWidget: (_, imageUrl, error) => Container(
               width: width.w,
@@ -175,7 +181,6 @@ class CachedImage extends StatelessWidget {
                   '${Const.images}logo.png'),
             ));
   }
-
 
 // Image(
 //     width: 272.w,

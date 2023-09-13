@@ -19,25 +19,23 @@ import 'package:nilay/utils/constants.dart';
 import 'preferences_manager.dart';
 
 class AppHelper {
-
-
   // TODO HELPER STATIC
-  static String isFavorite(bool isFav){
-    if(isFav) {
+  static String isFavorite(bool isFav) {
+    if (isFav) {
       return '${Const.icons}icon_favorite_added.svg';
-    }else {
+    } else {
       return '${Const.icons}icon_favorite_add.svg';
     }
   }
 
- static String getVenderMembership(String membership) {
-    if(membership == Const.KEY_MEMBERSHIP_GOLD){
+  static String getVenderMembership(String membership) {
+    if (membership == Const.KEY_MEMBERSHIP_GOLD) {
       return '${Const.icons}icon_membership_gold.svg';
-    }else if(membership == Const.KEY_MEMBERSHIP_SILVER){
+    } else if (membership == Const.KEY_MEMBERSHIP_SILVER) {
       return '${Const.icons}icon_membership_silver.svg';
-    }else if(membership == Const.KEY_MEMBERSHIP_BRONZE){
+    } else if (membership == Const.KEY_MEMBERSHIP_BRONZE) {
       return '${Const.icons}icon_membership_bronze.svg';
-    }else {
+    } else {
       return '${Const.icons}icon_membership_bronze.svg';
     }
   }
@@ -304,6 +302,12 @@ class AppHelper {
     return getAppLanguage() == 'ar'
         ? '${Const.icons}icon_next.svg'
         : '${Const.icons}icon_previous.svg';
+  }
+
+  static String iconLogout() {
+    return getAppLanguage() == 'ar'
+        ? '${Const.icons}icon_logout_en.svg'
+        : '${Const.icons}icon_logout_ar.svg';
   }
 
   static void showLoginDialog(BuildContext context) {
