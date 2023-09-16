@@ -332,3 +332,63 @@ class TextAbout extends StatelessWidget {
     );
   }
 }
+
+class NoData extends StatelessWidget {
+  final String icon;
+  final String textMain;
+  final String textSub;
+  FontWeight? fontWeight = FontWeight.w400;
+  bool isrequierd = true;
+
+  NoData({
+    super.key,
+    required this.icon,
+    required this.textMain,
+    required this.textSub,
+    this.fontWeight,
+
+    //  this.isrequierd,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+            width: 90.w,
+            height: 90.h,
+            padding: EdgeInsetsDirectional.all(4.r),
+            margin: EdgeInsetsDirectional.only(bottom: 27.h),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadiusDirectional.circular(60.r),
+                border: Border.all(color: AppColors.colorAppMain)),
+            child: Container(
+              height: 83.h,
+              width: 83.w,
+              decoration: BoxDecoration(
+                color: AppColors.colorAppSub,
+                borderRadius: BorderRadius.circular(60.r),
+              ),
+              child: SvgPicture.asset(
+                icon,
+                fit: BoxFit.scaleDown,
+              ),
+            )),
+        AppText.medium(text: textMain, color: AppColors.colorAppMain),
+        Container(
+          margin: EdgeInsetsDirectional.only(
+              top: 15.h, start: 52.w, end: 52.w, bottom: 48.h),
+          child: AppText.medium(
+              text: textSub,
+              color: AppColors.colorAppSub,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w400,
+              textAlign: TextAlign.center,
+              maxline: 2),
+        ),
+      ],
+    );
+  }
+}

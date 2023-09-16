@@ -6,7 +6,7 @@ import 'package:nilay/utils/app_helper.dart';
 import 'package:nilay/utils/constants.dart';
 import 'package:nilay/utils/preferences_manager.dart';
 
-class SplashController extends GetxController{
+class SplashController extends GetxController {
   bool? isBoarding = PreferencesManager.getAppData(key: Const.KEY_BOARDING);
   RxBool isAnimate = false.obs;
 
@@ -24,20 +24,17 @@ class SplashController extends GetxController{
 
   Future startApp() {
     // PreferencesManager.clearData(key: Const.KEY_BOARDING);
-    if(isBoarding != null) {
+    if (isBoarding != null) {
       if (AppHelper.getCurrentUserToken() != null) {
         return Future.delayed(
             const Duration(seconds: 8), () => Get.offAndToNamed(Routes.home));
       } else {
         return Future.delayed(
-            const Duration(seconds: 8), () =>
-            Get.offAndToNamed(Routes.signIn));
+            const Duration(seconds: 8), () => Get.offAndToNamed(Routes.signIn));
       }
-
-    }else {
+    } else {
       return Future.delayed(
           const Duration(seconds: 8), () => Get.offAndToNamed(Routes.language));
     }
   }
-
 }
