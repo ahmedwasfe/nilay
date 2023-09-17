@@ -7,9 +7,9 @@ import 'package:nilay/ui/home/pages/profile_page.dart';
 import 'package:nilay/utils/app_color.dart';
 import 'package:nilay/utils/app_helper.dart';
 import 'package:nilay/utils/app_text.dart';
+import 'package:nilay/utils/components.dart';
 import 'package:nilay/utils/constants.dart';
 
-import '../../utils/components.dart';
 
 class NotificationsPage extends StatelessWidget {
   const NotificationsPage({super.key});
@@ -23,7 +23,7 @@ class NotificationsPage extends StatelessWidget {
         backgroundColor: AppColors.colorWhite,
         title: AppText.medium(
           text: 'notification',
-          color: AppColors.colorAppSub2,
+          color: AppColors.colorAppMain,
         ),
         centerTitle: true,
         leading: InkWell(
@@ -31,7 +31,7 @@ class NotificationsPage extends StatelessWidget {
             AppHelper.iconBack(),
             fit: BoxFit.scaleDown,
           ),
-          onTap: () => Get.to(ProfilePage()),
+          onTap: () => Get.to(const ProfilePage()),
         ),
         actions: [
           Container(
@@ -51,8 +51,8 @@ class NotificationsPage extends StatelessWidget {
             child: Align(
               alignment: Alignment.center,
               child: InkWell(
-                onTap: () => Get.to(AddedNotificationsPage()),
-                child: NoData(
+                onTap: () => Get.to(const AddedNotificationsPage()),
+                child: NoDataItem(
                   icon: '${Const.icons}icon_profile_notification.svg',
                   textMain: 'no_notification_yet',
                   textSub: 'notification_alert',

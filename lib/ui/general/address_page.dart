@@ -42,19 +42,18 @@ class AddressPage extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            InkWell(
-              onTap: () => Get.to(AddAdressScreen()),
-              child: Container(
-                margin: REdgeInsetsDirectional.only(
-                    top: 62.h, start: 22.w, end: 22.w, bottom: 48.h),
+            Container(
+              margin: REdgeInsetsDirectional.only(
+                  top: 62.h, start: 22.w, end: 22.w, bottom: 48.h),
+              child: GestureDetector(
                 child: DottedBorder(
                   borderType: BorderType.RRect,
-                  dashPattern: [8, 7],
+                  dashPattern: const [8, 7],
                   radius: Radius.circular(35.r),
                   padding:
                       EdgeInsets.symmetric(vertical: 13.h, horizontal: 102.w),
                   child: ClipRRect(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
+                      borderRadius: const BorderRadius.all(Radius.circular(12)),
                       child: Row(
                         children: [
                           SvgPicture.asset('${Const.icons}icon_add.svg'),
@@ -69,17 +68,19 @@ class AddressPage extends StatelessWidget {
                         ],
                       )),
                 ),
+                onTap: () => Get.to(AddAdressScreen()),
               ),
             ),
-            Expanded(
-                child: _controller.listAddress.isNotEmpty
-                    ? ListView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: _controller.listAddress.length,
-                        itemBuilder: (_, index) =>
-                            buildAddressItem(_controller.listAddress[index]))
-                    : buildNoData()),
+            _controller.listAddress.isNotEmpty
+                ? ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: _controller.listAddress.length,
+                    itemBuilder: (_, index) =>
+                        buildAddressItem(_controller.listAddress[index]))
+                : Center(
+                heightFactor: 2.2,
+                child: buildNoData()),
           ],
         ),
       ),
@@ -149,11 +150,9 @@ class AddressPage extends StatelessWidget {
         ],
       );
 
-  Widget buildNoData() => Container(
-        child: NoData(
-          icon: '${Const.icons}icon_location.svg',
-          textMain: 'no_address_yet',
-          textSub: 'add_location',
-        ),
-      );
+  Widget buildNoData() => NoDataItem(
+    icon: '${Const.icons}icon_location.svg',
+    textMain: 'no_address_yet',
+    textSub: 'add_location',
+  );
 }

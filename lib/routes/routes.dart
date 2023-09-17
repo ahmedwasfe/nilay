@@ -15,7 +15,8 @@ import 'package:nilay/ui/auth/signup_screen.dart';
 import 'package:nilay/ui/boarding_screen.dart';
 import 'package:nilay/ui/home/home_screen.dart';
 import 'package:nilay/ui/language_screen.dart';
-import 'package:nilay/ui/orders/orders_vendor_screen.dart';
+import 'package:nilay/ui/orders/vendor_orders_screen.dart';
+import 'package:nilay/ui/orders/vendors_screen.dart';
 import 'package:nilay/ui/splash_screen.dart';
 
 class AppRoutes {
@@ -37,6 +38,7 @@ class AppRoutes {
 
     // TODO HOME SCREEN WITH ORDERS
     GetPage(name: Routes.home, page: () => HomeScreen()),
+    GetPage(name: Routes.vendors, page: () => VendorsScreen()),
     GetPage(name: Routes.vendorOrders, page: () => VendorOrdersScreen()),
 
 
@@ -56,6 +58,7 @@ class Routes {
   static const congratulations = '/congratulations';
 
   static const home = '/home';
+  static const vendors = '/vendors';
   static const vendorOrders = '/vendor_orders';
 
   static const map = '/map';
