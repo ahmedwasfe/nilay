@@ -12,7 +12,7 @@ import 'package:nilay/utils/preferences_manager.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  await FirebaseApi().initNotifications();
+  // await FirebaseApi().initNotifications();
   await initServices();
   runApp(const MyApp());
 }

@@ -53,6 +53,7 @@ class AppColors {
   static const colorTextSub4 = Color(0xFF6E6E6E);
   static const colorTextSub5 = Color(0xFF999999);
   static const colorTextSub6 = Color(0xFF7F7F7F);
+  static const colorTextSub7 = Color(0xFFA38DA5);
   static const colorTextSelected = Color(0xFF2A2A2D);
   static const colorTextUnSelected = Color(0xFF9D9DA8);
   static const colorOtherText = Color(0xFF0B35AB);
@@ -80,6 +81,10 @@ class AppColors {
   static const colorBoarding1 = Color(0xFFFFDFE2);
   static const colorBoarding2 = Color(0xFFFFDDBD);
   static const colorBoarding3 = Color(0xFFCCB1CE);
+
+  // TODO SOTRES ORDERS
+  static const colorShirt1 = Color(0xFFF6E5DD);
+  static const colorShirt2 = Color(0xFF0D203A);
 
   static const colorSuccessBG = Color(0xFFE9FFE8);
   static const colorSuccessText = Color(0xFF14DC06);

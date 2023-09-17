@@ -152,12 +152,7 @@ class CachedImage extends StatelessWidget {
   BoxFit fit = BoxFit.cover;
   bool isLoading = true;
 
-  CachedImage(
-      {required this.imageUrl,
-      this.width = 272,
-      this.height = 159,
-      this.fit = BoxFit.cover,
-      this.isLoading = true});
+  CachedImage({required this.imageUrl, this.width = 272, this.height = 159, this.fit = BoxFit.cover, this.isLoading = true});
 
   @override
   Widget build(BuildContext context) {
@@ -167,8 +162,7 @@ class CachedImage extends StatelessWidget {
         fit: BoxFit.cover,
         imageUrl: imageUrl,
         // placeholder: (_, imageurl) => Container(),
-        progressIndicatorBuilder: (_, imageUrl, downloaded) =>
-            isLoading ? AppWidgets.CustomAnimationProgress() : Container(),
+        progressIndicatorBuilder: (_, imageUrl, downloaded) => isLoading ? AppWidgets.CustomAnimationProgress() : Container(),
         // fadeOutCurve: Curves.,
         errorWidget: (_, imageUrl, error) => Container(
               width: width.w,
@@ -181,6 +175,7 @@ class CachedImage extends StatelessWidget {
                   '${Const.images}logo.png'),
             ));
   }
+
 
 // Image(
 //     width: 272.w,
@@ -333,14 +328,14 @@ class TextAbout extends StatelessWidget {
   }
 }
 
-class NoData extends StatelessWidget {
+class NoDataItem extends StatelessWidget {
   final String icon;
   final String textMain;
   final String textSub;
   FontWeight? fontWeight = FontWeight.w400;
   bool isrequierd = true;
 
-  NoData({
+  NoDataItem({
     super.key,
     required this.icon,
     required this.textMain,
@@ -365,14 +360,13 @@ class NoData extends StatelessWidget {
                 borderRadius: BorderRadiusDirectional.circular(60.r),
                 border: Border.all(color: AppColors.colorAppMain)),
             child: Container(
-              height: 83.h,
-              width: 83.w,
+              height: 80.h,
+              width: 80.w,
               decoration: BoxDecoration(
                 color: AppColors.colorAppSub,
                 borderRadius: BorderRadius.circular(60.r),
               ),
-              child: SvgPicture.asset(
-                icon,
+              child: SvgPicture.asset(icon,
                 fit: BoxFit.scaleDown,
               ),
             )),
@@ -382,7 +376,7 @@ class NoData extends StatelessWidget {
               top: 15.h, start: 52.w, end: 52.w, bottom: 48.h),
           child: AppText.medium(
               text: textSub,
-              color: AppColors.colorAppSub,
+              color: AppColors.colorTextSub7,
               fontSize: 14.sp,
               fontWeight: FontWeight.w400,
               textAlign: TextAlign.center,

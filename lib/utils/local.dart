@@ -19,10 +19,8 @@ class AppTranslations implements Translations {
 
           // TODO Boardings
           'title1': '"تبدأ أفضل لحظات الجمال معنا. احجز موعدك الآن!"',
-          'title2':
-              '"تخصصنا هو إبراز جمالك الحقيقي ، احجز موعدًا معنا ، واستمتع بتجربة فريدة من نوعها."',
-          'title3':
-              '"استعد لجمال لا يضاهى! اطلب منتجات التجميل من خلال تطبيقنا واحصل على تسوق ممتع ومريح"',
+          'title2': '"تخصصنا هو إبراز جمالك الحقيقي ، احجز موعدًا معنا ، واستمتع بتجربة فريدة من نوعها."',
+          'title3': '"استعد لجمال لا يضاهى! اطلب منتجات التجميل من خلال تطبيقنا واحصل على تسوق ممتع ومريح"',
 
           // TODO Auth
           'signin': 'تسجيل الدخول',
@@ -41,8 +39,7 @@ class AppTranslations implements Translations {
           // TODO VALIDATION Sign IN
           'please_enter_phone_number': 'يرجى إدخال رقم الهاتف الخاص بك',
           'please_enter_password': 'الرجاء إدخال كلمة المرور',
-          'password_must_be_more_than_6':
-              'كلمة المرور يجب أن تكون أكثر من ستة أحرف',
+          'password_must_be_more_than_6': 'كلمة المرور يجب أن تكون أكثر من ستة أحرف',
           'please_enter_your_name': 'من فضلك ادخل اسمك الكامل',
           'please_enter_username': 'الرجاء إدخال اسم المستخدم',
           'please_enter_email': 'رجاءا أدخل بريدك الإلكتروني',
@@ -52,15 +49,12 @@ class AppTranslations implements Translations {
 
           // TODO Forget Password
           'forget_password': 'نسيت كلمة المرور',
-          'select_which_contact_details':
-              'حدد تفاصيل الاتصال التي يجب أن نستخدمها لإعادة تعيين كلمة المرور الخاصة بك',
+          'select_which_contact_details': 'حدد تفاصيل الاتصال التي يجب أن نستخدمها لإعادة تعيين كلمة المرور الخاصة بك',
           'via_email': 'عبر البريد الالكتروني',
           'via_phone': 'عبر رقم الهاتف',
           'send': 'إرسال',
-          'enter_email_to_reset_password':
-              'الرجاء إدخال البريد الإلكتروني لإعادة تعيين كلمة المرور الخاصة بك',
-          'enter_phone_to_reset_password':
-              'الرجاء إدخال رقم الهاتف لإعادة تعيين كلمة المرور الخاصة بك',
+          'enter_email_to_reset_password': 'الرجاء إدخال البريد الإلكتروني لإعادة تعيين كلمة المرور الخاصة بك',
+          'enter_phone_to_reset_password': 'الرجاء إدخال رقم الهاتف لإعادة تعيين كلمة المرور الخاصة بك',
           'back_signin': 'العودة إلى صفحة تسجيل الدخول',
           'code_verification': 'التحقق من الرمز',
           'sent_code_to_email': 'لقد أرسلنا رمز التحقق إلى بريدك الإلكتروني.',
@@ -115,8 +109,11 @@ class AppTranslations implements Translations {
           'logout': 'تسجيل الخروج',
           'delete_account': 'حذف الحساب',
 
-          //TODO PERSONAL INFORMATION
-          'user_name': 'اسم المستخدم',
+          // TODO ORDERS
+          'size': 'الحجم:',
+          'color': 'اللون:',
+          'date': 'التاريخ:',
+          'time': 'الوقت:',
 
           //TODO ASSDESS PAGE
           'add_new_address': 'اضافة عنوان جديد',
@@ -146,12 +143,9 @@ class AppTranslations implements Translations {
           'skip': 'Skip',
 
           // TODO Boardings
-          'title1':
-              '"The best beauty moments start with us. Book your appointment now!"',
-          'title2':
-              '"Our specialty is to bring out your true beauty.Book an appointment with usEnjoy a unique experience."',
-          'title3':
-              '"Get ready for incomparable beauty! Order beauty products through our app And get a pleasant and comfortable shopping"',
+          'title1': '"The best beauty moments start with us. Book your appointment now!"',
+          'title2': '"Our specialty is to bring out your true beauty.Book an appointment with usEnjoy a unique experience."',
+          'title3': '"Get ready for incomparable beauty! Order beauty products through our app And get a pleasant and comfortable shopping"',
 
           // TODO Auth
           'signin': 'Sign In',
@@ -170,8 +164,7 @@ class AppTranslations implements Translations {
           // TODO VALIDATION Sign IN
           'please_enter_phone_number': 'Please enter your phone number',
           'please_enter_password': 'Please enter the password',
-          'password_must_be_more_than_6':
-              'Password must be more than six characters',
+          'password_must_be_more_than_6': 'Password must be more than six characters',
           'please_enter_your_name': 'Please enter your full name',
           'please_enter_username': 'Please enter username',
           'please_enter_email': 'Please enter your email',
@@ -181,24 +174,19 @@ class AppTranslations implements Translations {
 
           // TODO Forget Password
           'forget_password': 'Forget Password',
-          'select_which_contact_details':
-              'Select which contact details should we use to reset your password',
+          'select_which_contact_details': 'Select which contact details should we use to reset your password',
           'via_email': 'Via Email',
           'via_phone': 'Via Phone number',
           'send': 'Send',
-          'enter_email_to_reset_password':
-              'Please enter the email to reset your password',
-          'enter_phone_to_reset_password':
-              'Please enter the phone number to reset your password',
+          'enter_email_to_reset_password': 'Please enter the email to reset your password',
+          'enter_phone_to_reset_password': 'Please enter the phone number to reset your password',
           'back_signin': 'Back to Sign in page',
           'code_verification': 'Code Verification',
           'sent_code_to_email': 'We sent the code verification to your email :',
-          'sent_code_to_phone':
-              'We sent the code verification to your mobile number :',
+          'sent_code_to_phone': 'We sent the code verification to your mobile number :',
           'send_again': 'send again',
           'create_new_password': 'Create New password',
-          'create_secure_password':
-              'Create a strong and secure password that protects your account',
+          'create_secure_password': 'Create a strong and secure password that protects your account',
           'confirm': 'Confirm',
           'congratulations': 'Congratulations!',
           'account_ready_use': 'Your account is ready to use,',
@@ -248,8 +236,11 @@ class AppTranslations implements Translations {
           'logout': 'Logout',
           'delete_account': 'Delete Account',
 
-          //TODO PERSONAL INFORMATION
-          'user_name': 'User Name',
+          // TODO ORDERS
+          'size': 'Size:',
+          'color': 'Color:',
+          'date': 'Date:',
+          'time': 'Time:',
 
           //TODO ADDRESS PAGE
           'add_new_address': 'Add New Address',

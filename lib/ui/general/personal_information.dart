@@ -73,8 +73,8 @@ class MyProfile extends StatelessWidget {
                     color: Colors.black),
                 decoration: InputDecoration(
                     label: AppText.medium(
-                        text: "user_name", fontWeight: FontWeight.w400),
-                    hintText: 'user_name'.tr,
+                        text: "username", fontWeight: FontWeight.w400),
+                    hintText: 'username'.tr,
                     hintStyle: TextStyle(
                         color: AppColors.colorTextSub2,
                         fontSize: 14.h,

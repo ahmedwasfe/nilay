@@ -116,7 +116,7 @@ class FavoritePage extends StatelessWidget {
                             _controller.listFavorites[index])),
                   )
                 : Center(
-                    child: NoData(
+                    child: NoDataItem(
                     icon: '${Const.icons}icon_favorite_empty.svg',
                     textMain: "textMain",
                     textSub: 'dont_have_favourite',

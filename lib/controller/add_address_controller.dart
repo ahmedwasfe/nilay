@@ -11,43 +11,41 @@ class AddAddressController extends GetxController {
   RxString regoinSelected = ''.obs;
   String regoinId = '0';
 
-  List<AddAddress> listAddress = [];
+  List<AddAddress> listAddress = [
+    AddAddress(
+        adsress: '',
+        governorate: 'Gaza',
+        governorateId: '1',
+        region: 'Remal region',
+        regionId: '1',
+        street: 'Al Nasser street',
+        houseNumber: '61,22,05,00'),
+    AddAddress(
+        adsress: '',
+        governorate: 'Rafah',
+        governorateId: '2',
+        region: 'Remal region',
+        regionId: '2',
+        street: 'Al Itsalat street',
+        houseNumber: '61,27,05,88'),
+    AddAddress(
+        adsress: '',
+        governorate: 'Gaza',
+        governorateId: '1',
+        region: 'Remal region',
+        regionId: '1',
+        street: 'Al Nasser street',
+        houseNumber: '61,22,05,00'),
+    AddAddress(
+        adsress: '',
+        governorate: 'Rafah',
+        governorateId: '2',
+        region: 'Remal region',
+        regionId: '2',
+        street: 'Al Itsalat street',
+        houseNumber: '61,27,05,88'),
+  ];
 
-  /*
-  
-   AddAddress(
-        adsress: '',
-        governorate: 'Gaza',
-        governorateId: '1',
-        region: 'Remal region',
-        regionId: '1',
-        street: 'Al Nasser street',
-        houseNumber: '61,22,05,00'),
-    AddAddress(
-        adsress: '',
-        governorate: 'Rafah',
-        governorateId: '2',
-        region: 'Remal region',
-        regionId: '2',
-        street: 'Al Itsalat street',
-        houseNumber: '61,27,05,88'),
-    AddAddress(
-        adsress: '',
-        governorate: 'Gaza',
-        governorateId: '1',
-        region: 'Remal region',
-        regionId: '1',
-        street: 'Al Nasser street',
-        houseNumber: '61,22,05,00'),
-    AddAddress(
-        adsress: '',
-        governorate: 'Rafah',
-        governorateId: '2',
-        region: 'Remal region',
-        regionId: '2',
-        street: 'Al Itsalat street',
-        houseNumber: '61,27,05,88'),
-  */
 
   bool isValidation(BuildContext context) {
     if (governorateId == '0') {
