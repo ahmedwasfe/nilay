@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:nilay/controller/notifications_controller.dart';
 import 'package:nilay/ui/home/pages/profile_page.dart';
+import 'package:nilay/utils/app_color.dart';
+import 'package:nilay/utils/app_helper.dart';
+import 'package:nilay/utils/app_text.dart';
+import 'package:nilay/utils/components.dart';
 import 'package:nilay/utils/constants.dart';
 
-import '../../utils/app_color.dart';
-import '../../utils/app_helper.dart';
-import '../../utils/app_text.dart';
-
-class AddedNotificationsPage extends StatelessWidget {
-  const AddedNotificationsPage({super.key});
+class NotificationsScreen extends StatelessWidget {
+  final _controller = Get.put(NotificationController());
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class AddedNotificationsPage extends StatelessWidget {
         backgroundColor: AppColors.colorWhite,
         title: AppText.medium(
           text: 'notification',
-          color: AppColors.colorAppSub2,
+          color: AppColors.colorAppMain,
         ),
         centerTitle: true,
         leading: InkWell(
@@ -33,13 +34,15 @@ class AddedNotificationsPage extends StatelessWidget {
         ),
         actions: [
           Container(
+            alignment: AlignmentDirectional.centerEnd,
             margin: EdgeInsetsDirectional.only(end: 20.r),
-            child: SvgPicture.asset('${Const.icons}icon_reload.svg'),
+            child: SvgPicture.asset(
+                // width: 24.w, height: 24.h,
+                '${Const.icons}icon_reload.svg'),
           ),
         ],
       ),
       body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -50,11 +53,20 @@ class AddedNotificationsPage extends StatelessWidget {
                     color: AppColors.grayColorBg,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400)),
-            ListView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: 20,
-                itemBuilder: (_, index) => buildNotificationItem())
+            _controller.listNotifications.isNotEmpty
+                ? ListView.builder(
+                    shrinkWrap: true,
+                    physics: const BouncingScrollPhysics(),
+                    itemCount: _controller.listNotifications.length,
+                    itemBuilder: (_, index) => buildNotificationItem())
+                : Center(
+                    heightFactor: 2.8,
+                    child: NoDataItem(
+                      icon: '${Const.icons}icon_profile_notification.svg',
+                      textMain: 'no_notification_yet',
+                      textSub: 'notification_alert',
+                    ),
+                  ),
           ],
         ),
       ),
@@ -62,7 +74,6 @@ class AddedNotificationsPage extends StatelessWidget {
   }
 
   Widget buildNotificationItem() => Container(
-      
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadiusDirectional.circular(16.r),
@@ -70,7 +81,7 @@ class AddedNotificationsPage extends StatelessWidget {
               BoxShadow(
                   blurRadius: 0,
                   color: Colors.grey.withOpacity(0.4),
-                  offset: Offset(0.0, 1.0))
+                  offset: const Offset(0.0, 1.0))
             ]),
         margin: EdgeInsetsDirectional.only(start: 20.w, end: 20.w, top: 17.h),
         child: Container(
@@ -84,8 +95,8 @@ class AddedNotificationsPage extends StatelessWidget {
               Container(
                 margin: EdgeInsetsDirectional.only(start: 6.w),
                 child: CircleAvatar(
-                  backgroundImage: AssetImage(
-                    '${Const.images}pic1.jpg',
+                  backgroundImage: const NetworkImage(
+                    Const.imageUserOnline1,
                   ),
                   radius: 32.r,
                 ),

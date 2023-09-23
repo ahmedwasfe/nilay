@@ -1,13 +1,13 @@
 class AddAddress {
   late String governorate;
-  late String governorateId;
+  late int governorateId;
 
   late String region;
-  late String regionId;
+  late int regionId;
 
   late String street;
   late String houseNumber;
-  late String adsress;
+  late String address;
   late double lat;
   late double lng;
 
@@ -18,6 +18,6 @@ class AddAddress {
     required this.regionId,
     required this.street,
     required this.houseNumber,
-    required this.adsress,
+    required this.address,
   });
 }

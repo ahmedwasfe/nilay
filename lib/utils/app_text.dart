@@ -36,7 +36,7 @@ class AppText {
       textAlign: textAlign,
       style: TextStyle(
           fontFamily: Const.appFont,
-          fontSize: Platform.isAndroid ? fontSize.sp : 15.sp,
+          fontSize: Platform.isAndroid ? fontSize.sp : 16.sp,
           fontWeight: fontWeight,
           color: color),
     );

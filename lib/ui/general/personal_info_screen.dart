@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:nilay/controller/personal_info_controller.dart';
 import 'package:nilay/ui/home/pages/profile_page.dart';
 import 'package:nilay/utils/app_color.dart';
 import 'package:nilay/utils/app_helper.dart';
@@ -10,8 +13,9 @@ import 'package:nilay/utils/app_text.dart';
 import 'package:nilay/utils/components.dart';
 import 'package:nilay/utils/constants.dart';
 
-class MyProfile extends StatelessWidget {
-  const MyProfile({super.key});
+class PersonalInfoScreen extends StatelessWidget {
+
+  final _controller = Get.put(PersonalInfoController());
 
   @override
   Widget build(BuildContext context) {
@@ -37,28 +41,62 @@ class MyProfile extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: Container(
-                width: 92.w,
-                height: 92.h,
-                padding: EdgeInsetsDirectional.all(2.r),
-                margin: EdgeInsetsDirectional.only(top: 64.h, bottom: 40.h),
+            GestureDetector(
+              child: GetBuilder<PersonalInfoController>(builder: (controller) => Container(
+                margin: EdgeInsetsDirectional.only(top: 60.h),
+                padding: EdgeInsetsDirectional.all(2.5.r),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadiusDirectional.circular(50.r),
                     border: Border.all(color: AppColors.colorAppMain)),
-                child: CircleAvatar(
-                  backgroundColor: Colors.white,
-                  radius: 50,
-                  backgroundImage:
-                      NetworkImage(AppHelper.getCurrentUser()!.photo!),
+                child: Stack(
+                  alignment: AlignmentDirectional.bottomEnd,
+                  children: [
+                    controller.userProfile == null
+                    ? CircleAvatar(
+                      backgroundColor: AppColors.colorAppMain,
+                      radius: 42.r,
+                      child: Container(
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadiusDirectional.circular(50.r)
+                          ),
+                          child: CachedImage(
+                              isLoading: false,
+                              imageUrl: AppHelper.getCurrentUser()!.photo!)),
+                    )
+                    : CircleAvatar(
+                      backgroundColor: AppColors.colorAppMain,
+                      radius: 42.r,
+                      backgroundImage: FileImage(File(controller.userProfile!.path)),
+                    ),
+                    Container(
+                      margin: EdgeInsetsDirectional.only(top: 10.r),
+                      padding: EdgeInsetsDirectional.all(2.2.r),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadiusDirectional.circular(50.r)
+                      ),
+                      child: Container(
+                        margin: EdgeInsetsDirectional.only(bottom: 0.r),
+                        width: 24.w,
+                        height: 24.h,
+                        decoration: BoxDecoration(
+                            color: AppColors.colorAppMain,
+                            borderRadius: BorderRadiusDirectional.circular(50.r)
+                        ),
+                        child: SvgPicture.asset('${Const.icons}icon_camera.svg', fit: BoxFit.scaleDown,),
+                      ),
+                    )
+                  ],
                 ),
-              ),
+              )),
+              onTap: () => _controller.requestStoragePermission(),
             ),
             Container(
               margin: EdgeInsetsDirectional.only(
-                  start: 20.w, end: 20.w, bottom: 30.h),
+                  start: 20.w, end: 20.w, top: 40.h),
               child: TextFormField(
+                controller: _controller.usernameController,
                 textInputAction: TextInputAction.go,
                 keyboardType: TextInputType.text,
                 cursorColor: AppColors.colorAppMain,
@@ -99,8 +137,9 @@ class MyProfile extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsetsDirectional.only(
-                  start: 20.w, end: 20.w, bottom: 30.h),
+                  start: 20.w, end: 20.w, top: 30.h),
               child: TextFormField(
+                controller: _controller.fullNameController,
                 textInputAction: TextInputAction.go,
                 keyboardType: TextInputType.text,
                 cursorColor: AppColors.colorAppMain,
@@ -141,8 +180,9 @@ class MyProfile extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsetsDirectional.only(
-                  start: 20.w, end: 20.w, bottom: 30.h),
+                  start: 20.w, end: 20.w, top: 30.h),
               child: TextFormField(
+                controller: _controller.phoneController,
                 textInputAction: TextInputAction.go,
                 keyboardType: TextInputType.text,
                 cursorColor: AppColors.colorAppMain,
@@ -183,8 +223,9 @@ class MyProfile extends StatelessWidget {
             ),
             Container(
               margin: EdgeInsetsDirectional.only(
-                  start: 20.w, end: 20.w, bottom: 30.h),
+                  start: 20.w, end: 20.w, top: 30.h),
               child: TextFormField(
+                controller: _controller.emailController,
                 textInputAction: TextInputAction.go,
                 keyboardType: TextInputType.text,
                 cursorColor: AppColors.colorAppMain,
@@ -234,9 +275,8 @@ class MyProfile extends StatelessWidget {
                   background: AppColors.colorAppMain,
                   borderColor: AppColors.colorAppMain,
                   isUpperCase: false,
-                  // fontfamily: Const.appFont,
                   fontWeight: FontWeight.w400,
-                  click: () {}),
+                  click: () => _controller.updateProfile(context)),
             )
           ],
         ),

@@ -8,6 +8,7 @@ import 'package:nilay/utils/constants.dart';
 import 'package:nilay/utils/preferences_manager.dart';
 
 class SettingsController extends GetxController {
+
   List<Country> listCountries = [
     Country(
         id: 1,

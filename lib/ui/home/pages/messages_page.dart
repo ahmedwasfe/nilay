@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:nilay/controller/messages_controller.dart';
-import 'package:nilay/model/messages.dart';
+import 'package:nilay/model/test/messages.dart';
 import 'package:nilay/utils/app_color.dart';
 import 'package:nilay/utils/app_helper.dart';
 import 'package:nilay/utils/app_text.dart';
@@ -26,19 +26,7 @@ class MessagesPage extends StatelessWidget {
         leadingWidth: 78.w,
         leading: Container(
           margin: EdgeInsetsDirectional.only(start: 20.r),
-          child: CircleAvatar(
-            backgroundColor: AppColors.colorAppMain,
-            child: Container(
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadiusDirectional.circular(100.r)
-              ),
-              child: CachedImage(
-                isLoading: false,
-                  fit: BoxFit.scaleDown,
-                  imageUrl: AppHelper.getCurrentUser()!.photo!),
-            ),
-          ),
+          child: CircleCachedImage(imageUrl: AppHelper.getCurrentUser()!.photo!, isLoading: false),
         ),
         actions: [
           Container(

@@ -14,7 +14,7 @@ class HomeController extends GetxController {
   bool isHome = false;
 
   List<Widget> screens = [
-    const ProfilePage(),
+    ProfilePage(),
     FavoritePage(),
     HomePage(),
     MyOrdersPage(),
@@ -22,7 +22,7 @@ class HomeController extends GetxController {
   ];
 
   List<BottomNavItem> bottomNavItems = [
-    BottomNavItem(navIndex: 0, name: 'profile', icon: '${Const.icons}icon_profile.svg', isSelected: false),
+    BottomNavItem(navIndex: 0, name: 'profile_', icon: '${Const.icons}icon_profile.svg', isSelected: false),
     BottomNavItem(navIndex: 1, name: 'favorite', icon: '${Const.icons}icon_favorite.svg', isSelected: false),
     BottomNavItem(navIndex: 2, name: 'home', icon: '${Const.icons}icon_home.svg', isSelected: false),
     BottomNavItem(navIndex: 3, name: 'my_orders', icon: '${Const.icons}icon_my_orders.svg', isSelected: false),

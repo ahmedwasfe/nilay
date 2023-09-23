@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:nilay/model/messages.dart';
+import 'package:nilay/model/test/messages.dart';
 import 'package:nilay/utils/constants.dart';
 
 class MessagesController extends GetxController{

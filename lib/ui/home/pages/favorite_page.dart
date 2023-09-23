@@ -4,12 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:nilay/controller/favorite_controller.dart';
-import 'package:nilay/model/vendor_data.dart';
+import 'package:nilay/model/test/vendor_data.dart';
 import 'package:nilay/utils/app_color.dart';
 import 'package:nilay/utils/app_helper.dart';
 import 'package:nilay/utils/app_text.dart';
 import 'package:nilay/utils/components.dart';
 import 'package:nilay/utils/constants.dart';
+import 'package:nilay/widget/favorite/favorite_item.dart';
+import 'package:nilay/widget/favorite/top_favorite_item.dart';
 
 class FavoritePage extends StatelessWidget {
   final _controller = Get.put(FavoriteController());
@@ -26,18 +28,7 @@ class FavoritePage extends StatelessWidget {
         leadingWidth: 78.w,
         leading: Container(
           margin: EdgeInsetsDirectional.only(start: 20.r),
-          child: CircleAvatar(
-            backgroundColor: AppColors.colorAppMain,
-            child: Container(
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadiusDirectional.circular(100.r)),
-              child: CachedImage(
-                  isLoading: false,
-                  fit: BoxFit.scaleDown,
-                  imageUrl: AppHelper.getCurrentUser()!.photo!),
-            ),
-          ),
+          child: CircleCachedImage(imageUrl: AppHelper.getCurrentUser()!.photo!, isLoading: false),
         ),
         actions: [
           Container(
@@ -86,7 +77,7 @@ class FavoritePage extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: _controller.listTopFavorites
-                      .map((vendor) => _buildTopFavoriteItem(vendor))
+                      .map((vendor) => TopFavoriteItem(vendor: vendor))
                       .toList(),
                 ),
               ),
@@ -106,13 +97,13 @@ class FavoritePage extends StatelessWidget {
                         physics: const NeverScrollableScrollPhysics(),
                         itemCount: _controller.listFavorites.length,
                         gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
+                            SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisSpacing: 0,
-                          mainAxisSpacing: 16,
-                          childAspectRatio: 120 / 150,
+                          mainAxisSpacing: 16.r,
+                          childAspectRatio: 120.r / 150.r,
                           crossAxisCount: 2,
                         ),
-                        itemBuilder: (context, index) => _buildFavoriteItem(
+                        itemBuilder: (context, index) => FavoriteItem(vendor:
                             _controller.listFavorites[index])),
                   )
                 : Center(
@@ -122,239 +113,10 @@ class FavoritePage extends StatelessWidget {
                     textSub: 'dont_have_favourite',
                     fontWeight: FontWeight.w500,
                   )
-                    // Column(
-                    //   children: [
-                    //     Container(
-                    //       width: 90.w,
-                    //       height: 90.h,
-                    //       decoration: BoxDecoration(
-                    //         borderRadius: BorderRadiusDirectional.circular(50.r),
-                    //         border: Border.all(color: AppColors.colorAppMain, width: 1.r)
-                    //       ),
-                    //       child: Container(
-                    //         width: 80.w,
-                    //         height: 80.h,
-                    //         margin: EdgeInsetsDirectional.all(4.r),
-                    //         decoration: BoxDecoration(
-                    //           color: AppColors.colorAppSub,
-                    //             borderRadius: BorderRadiusDirectional.circular(50.r),
-
-                    //         ),
-                    //         child: SvgPicture.asset('${Const.icons}icon_favorite_empty.svg',
-                    //         fit: BoxFit.scaleDown),
-                    //       ),
-                    //     ),
-                    //     Container(
-                    //       margin: EdgeInsetsDirectional.only(top: 40.r),
-                    //       child: AppText.medium(text: 'dont_have_favourite', color: AppColors.colorTextMain),
-                    //     ),
-                    //   ],
-                    // ),
                     ),
           ],
         ),
       ),
     );
   }
-
-  Widget _buildTopFavoriteItem(VendorData vendor) => Container(
-        clipBehavior: Clip.antiAlias,
-        margin: EdgeInsetsDirectional.only(start: 8.r, end: 8.r),
-        width: 272.w,
-        height: 159.r,
-        decoration: BoxDecoration(
-            // color: Colors.transparent.withOpacity(0.5),
-            borderRadius: BorderRadiusDirectional.circular(9.r)),
-        child: Stack(
-          alignment: AlignmentDirectional.topCenter,
-          children: [
-            CachedImage(imageUrl: vendor.image),
-            Align(
-              alignment: AlignmentDirectional.bottomCenter,
-              child: Container(
-                width: 150,
-                height: 30.h,
-                alignment: AlignmentDirectional.center,
-                margin: EdgeInsetsDirectional.only(
-                    bottom: 16.r, start: 10.r, end: 10.r),
-                decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.8),
-                    borderRadius: BorderRadiusDirectional.circular(10.r)),
-                child: AppText.medium(
-                    text: vendor.name,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.colorAppMain),
-              ),
-            ),
-            Container(
-              width: 272.w,
-              height: 159.r,
-              decoration: BoxDecoration(
-                color: Colors.black.withAlpha(60),
-              ),
-            ),
-            Container(
-              height: 48.r,
-              // color: Colors.cyan,
-              margin:
-                  EdgeInsetsDirectional.only(start: 10.r, top: 6.r, end: 10.r),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SvgPicture.asset(
-                      AppHelper.getVenderMembership(vendor.membership)),
-                  const Spacer(),
-                  Stack(
-                    children: [
-                      Positioned(
-                        top: 10.5,
-                        right: 0,
-                        child: SvgPicture.asset(
-                            height: 10, '${Const.icons}icon_shape_polygon.svg'),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Container(
-                            width: 35.r,
-                            height: 18.r,
-                            decoration: BoxDecoration(
-                                color: AppColors.colorWhite,
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(16.r)),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                SvgPicture.asset('${Const.icons}icon_star.svg'),
-                                AppText.medium(
-                                    text: vendor.rate,
-                                    color: AppColors.colorAppMain,
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w400)
-                              ],
-                            ),
-                          ),
-                          Container(
-                              width: 20.r,
-                              height: 20.r,
-                              margin: EdgeInsetsDirectional.only(top: 7.r),
-                              padding: EdgeInsetsDirectional.all(4.r),
-                              decoration: BoxDecoration(
-                                  color: AppColors.colorWhite,
-                                  borderRadius:
-                                      BorderRadiusDirectional.circular(50.r)),
-                              child: SvgPicture.asset(
-                                  AppHelper.isFavorite(vendor.isFavorite))),
-                        ],
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
-      );
-
-  Widget _buildFavoriteItem(VendorData vendor) => Container(
-        clipBehavior: Clip.antiAlias,
-        margin: EdgeInsetsDirectional.only(start: 8.r, end: 8.r),
-        decoration: BoxDecoration(
-            // color: Colors.transparent.withOpacity(0.5),
-            borderRadius: BorderRadiusDirectional.circular(9.r)),
-        child: Stack(
-          alignment: AlignmentDirectional.topCenter,
-          children: [
-            CachedImage(
-              imageUrl: vendor.image,
-              width: 180.w,
-              height: 234.r,
-            ),
-            Align(
-              alignment: AlignmentDirectional.bottomCenter,
-              child: Container(
-                width: double.infinity,
-                height: 28.h,
-                alignment: AlignmentDirectional.center,
-                margin: EdgeInsetsDirectional.only(
-                    bottom: 16.r, start: 10.r, end: 10.r),
-                padding: EdgeInsetsDirectional.only(start: 4.r),
-                decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.8),
-                    borderRadius: BorderRadiusDirectional.circular(10.r)),
-                child: AppText.medium(
-                    text: vendor.name,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.colorAppMain),
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.black.withAlpha(60),
-              ),
-            ),
-            Container(
-              height: 48.r,
-              // color: Colors.cyan,
-              margin:
-                  EdgeInsetsDirectional.only(start: 10.r, top: 6.r, end: 10.r),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SvgPicture.asset(
-                      AppHelper.getVenderMembership(vendor.membership)),
-                  const Spacer(),
-                  Stack(
-                    children: [
-                      Positioned(
-                        top: 10.5,
-                        right: 0,
-                        child: SvgPicture.asset(
-                            height: 10, '${Const.icons}icon_shape_polygon.svg'),
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Container(
-                            width: 35.r,
-                            height: 18.r,
-                            decoration: BoxDecoration(
-                                color: AppColors.colorWhite,
-                                borderRadius:
-                                    BorderRadiusDirectional.circular(16.r)),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                SvgPicture.asset('${Const.icons}icon_star.svg'),
-                                AppText.medium(
-                                    text: vendor.rate,
-                                    color: AppColors.colorAppMain,
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w400)
-                              ],
-                            ),
-                          ),
-                          Container(
-                              width: 20.r,
-                              height: 20.r,
-                              margin: EdgeInsetsDirectional.only(top: 7.r),
-                              padding: EdgeInsetsDirectional.all(4.r),
-                              decoration: BoxDecoration(
-                                  color: AppColors.colorWhite,
-                                  borderRadius:
-                                      BorderRadiusDirectional.circular(50.r)),
-                              child: SvgPicture.asset(
-                                  AppHelper.isFavorite(vendor.isFavorite))),
-                        ],
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
-      );
 }

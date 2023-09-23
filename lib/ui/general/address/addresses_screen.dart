@@ -4,19 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:nilay/controller/add_address_controller.dart';
-import 'package:nilay/model/add_address.dart';
-import 'package:nilay/ui/general/add_address.dart';
+import 'package:nilay/controller/address_controller.dart';
+import 'package:nilay/model/test/add_address.dart';
+import 'package:nilay/routes/routes.dart';
+import 'package:nilay/ui/general/address/add_address_screen.dart';
 import 'package:nilay/utils/app_color.dart';
 import 'package:nilay/utils/app_helper.dart';
 import 'package:nilay/utils/app_text.dart';
 import 'package:nilay/utils/components.dart';
 import 'package:nilay/utils/constants.dart';
 
-import '../home/pages/profile_page.dart';
-
-class AddressPage extends StatelessWidget {
-  final _controller = Get.put(AddAddressController());
+class AddressScreen extends StatelessWidget {
+  final _controller = Get.put(AddressController());
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +34,7 @@ class AddressPage extends StatelessWidget {
             AppHelper.iconBack(),
             fit: BoxFit.scaleDown,
           ),
-          onTap: () => Get.to(ProfilePage()),
+          onTap: () => Navigator.pop(context),
         ),
       ),
       body: SingleChildScrollView(
@@ -68,7 +67,7 @@ class AddressPage extends StatelessWidget {
                         ],
                       )),
                 ),
-                onTap: () => Get.to(AddAdressScreen()),
+                onTap: () => Get.toNamed(Routes.addAddress),
               ),
             ),
             _controller.listAddress.isNotEmpty
@@ -98,12 +97,12 @@ class AddressPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24.r),
                 border: Border.all(color: AppColors.colorAppSub, width: 0.5.w)),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                     width: 40.w,
                     height: 40.h,
                     padding: EdgeInsetsDirectional.all(10.r),
+                    margin: EdgeInsetsDirectional.only(start: 14.r),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadiusDirectional.circular(60.r),
                         border: Border.all(color: AppColors.colorAppSub)),
@@ -111,36 +110,47 @@ class AddressPage extends StatelessWidget {
                       '${Const.icons}icone_profile_home.svg',
                       fit: BoxFit.scaleDown,
                     )),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    AppText.medium(
-                        text: address.governorate,
-                        color: AppColors.colorAppSub2,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400),
-                    AppText.medium(
-                        text: address.region,
-                        color: AppColors.colorTextMain,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400),
-                    AppText.medium(
-                        text: address.street,
-                        color: AppColors.colorTextMain,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400),
-                    AppText.medium(
-                        text: address.houseNumber,
-                        color: AppColors.colorTextMain,
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400),
-                  ],
+                SizedBox(width: 16.w),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AppText.medium(
+                          text: address.governorate,
+                          color: AppColors.colorAppSub2,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400),
+                      AppText.medium(
+                          text: address.region,
+                          color: AppColors.colorTextMain,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400),
+                      AppText.medium(
+                          text: address.street,
+                          color: AppColors.colorTextMain,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400),
+                      AppText.medium(
+                          text: address.houseNumber,
+                          color: AppColors.colorTextMain,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w400),
+                    ],
+                  ),
                 ),
-                SizedBox(
-                  width: 20.w,
-                ),
-                SvgPicture.asset('${Const.icons}icon_map.svg')
+                Container(
+                    margin: EdgeInsetsDirectional.only(end: 14.r),
+                    child: Stack(
+                      alignment: AlignmentDirectional.center,
+                      children: [
+                        const CircleAvatar(
+                          radius: 20,
+                          backgroundImage: AssetImage('${Const.images}image_map_address.png'),
+                        ),
+                        SvgPicture.asset('${Const.icons}icon_address.svg', color: Colors.redAccent),
+                      ],
+                    ))
               ],
             ),
           ),

@@ -68,6 +68,10 @@ dependencies:
   awesome_top_snackbar: ^0.0.3
   firebase_messaging: ^14.6.7
   cached_network_image: ^3.2.3
+  flutter_switch: ^0.3.2
+  carousel_slider: ^4.2.1
+  ready: ^1.8.1
+  marquee: ^2.2.3
 
 dev_dependencies:
   flutter_test:
