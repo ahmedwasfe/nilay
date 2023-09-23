@@ -28,15 +28,31 @@ class AppHelper {
     }
   }
 
-  static String getVenderMembership(String membership) {
+  static String getVenderMembership(String membership, bool isStore) {
     if (membership == Const.KEY_MEMBERSHIP_GOLD) {
-      return '${Const.icons}icon_membership_gold.svg';
+      if(isStore) {
+        return '${Const.icons}icon_membership_gold1.svg';
+      } else {
+        return '${Const.icons}icon_membership_gold.svg';
+      }
     } else if (membership == Const.KEY_MEMBERSHIP_SILVER) {
-      return '${Const.icons}icon_membership_silver.svg';
+      if(isStore) {
+        return '${Const.icons}icon_membership_silver1.svg';
+      } else {
+        return '${Const.icons}icon_membership_silver.svg';
+      }
     } else if (membership == Const.KEY_MEMBERSHIP_BRONZE) {
-      return '${Const.icons}icon_membership_bronze.svg';
+      if(isStore) {
+        return '${Const.icons}icon_membership_bronze1.svg';
+      } else {
+        return '${Const.icons}icon_membership_bronze.svg';
+      }
     } else {
-      return '${Const.icons}icon_membership_bronze.svg';
+      if(isStore) {
+        return '${Const.icons}icon_membership_bronze1.svg';
+      } else {
+        return '${Const.icons}icon_membership_bronze.svg';
+      }
     }
   }
 

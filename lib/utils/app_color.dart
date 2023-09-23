@@ -43,6 +43,7 @@ class AppColors {
   static const colorAppSub = Color(0xFFD7CDD8);
   static const colorAppSub1 = Color(0xFFF7FCFB);
   static const colorAppSub2 = Color(0xFF8F159A);
+  static const colorAppSub3 = Color(0xFF6D4A71);
   static const colorShapeSelected = Color(0xFFEFEBEF);
 
   static const colorTextMain = Color(0xFF876A8A);
@@ -60,6 +61,7 @@ class AppColors {
   static const colorOtherText1 = Color(0xFF171717);
   static const colorOtherBG = Color(0xFFF9F9FA);
   static const colorPinBG = Color(0xFFEAEAEB);
+  static const colorPinBG1 = Color(0xFFBABABA);
 
   static const colorBtnDisable = Color(0xFFEBEBEB);
   static const colorBtnTextDisable = Color(0xFF9C9D9E);
@@ -76,6 +78,7 @@ class AppColors {
   static const grayColorBg1 = Color(0xFFD5D5D5);
   static const grayColorBg2 = Color(0xFFF3F6F7);
   static const colorGray = Color(0xFFF0F0F0);
+  static const colorGray1 = Color(0xFFDCDCDC);
   static const colorLine = Color(0xFFE0E0E0);
   static const formSearchColor = Color(0xFFFBFBFB);
   static const colorBoarding1 = Color(0xFFFFDFE2);
@@ -87,7 +90,9 @@ class AppColors {
   static const colorShirt2 = Color(0xFF0D203A);
 
   static const colorSuccessBG = Color(0xFFE9FFE8);
+  static const colorSuccessBG1 = Color(0xFF7DDF79);
   static const colorSuccessText = Color(0xFF14DC06);
+
 
   static const colorErrorBG = Color(0xFFFFE8E8);
   static const colorErrorText = Color(0xFFFF5454);

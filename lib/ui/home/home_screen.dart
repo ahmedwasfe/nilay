@@ -120,7 +120,6 @@ class HomeScreen extends StatelessWidget {
 
      for(BottomNavItem nav in controller.bottomNavItems){
        nav.isSelected = false;
-
      }
      controller.pageSelected = nav.icon;
      print('SELECTED: ${nav.name}');

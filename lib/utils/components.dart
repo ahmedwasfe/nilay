@@ -63,7 +63,10 @@ class AppWidgets {
       required String message,
       Color textColor = AppColors.colorWhite,
       Color backgroundColor = AppColors.colorSnackBaErrorColor,
-      Color iconColor = AppColors.colorSnackBarIconError}) {
+      Color iconColor = AppColors.colorSnackBaErrorColor,
+      Widget? startIcon,
+      Color startIconColor = AppColors.colorErrorText
+      }) {
     // ScaffoldMessenger.of(context).showSnackBar(
     //     SnackBar(
     //       behavior: SnackBarBehavior.floating,
@@ -134,9 +137,10 @@ class AppWidgets {
           fontFamily: Const.appFont,
           fontStyle: FontStyle.italic,
           fontWeight: FontWeight.w400,
-          fontSize: 14.sp),
+          fontSize: 13.sp),
       backgroundColor: backgroundColor,
-      icon: const Icon(Icons.close, color: Colors.redAccent),
+      starIcon: startIcon ?? Icon(Icons.error_outline_rounded, color: startIconColor),
+      icon: Icon(Icons.close, color: iconColor),
       iconWithDecoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         border: Border.all(color: backgroundColor),
@@ -174,6 +178,55 @@ class CachedImage extends StatelessWidget {
                   fit: BoxFit.scaleDown,
                   '${Const.images}logo.png'),
             ));
+  }
+
+
+// Image(
+//     width: 272.w,
+//     height: 159.r,
+//     image: CachedNetworkImageProvider(vendor.image), fit: BoxFit.cover),
+/*Image.network(
+            width: 272.w,
+            height: 159.r,
+            vendor.image, fit: BoxFit.cover)*/
+}
+
+class CircleCachedImage extends StatelessWidget {
+  String imageUrl;
+  double width = 272;
+  double height = 159;
+  double radius = 40;
+  BoxFit fit = BoxFit.cover;
+  bool isLoading = true;
+
+  CircleCachedImage({required this.imageUrl, this.width = 272, this.height = 159, this.radius = 40, this.fit = BoxFit.cover, this.isLoading = true});
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      backgroundColor: AppColors.colorAppMain,
+      radius: radius,
+      child: ClipOval(
+        child: CachedNetworkImage(
+            width: width.w,
+            height: height.r,
+            fit: BoxFit.cover,
+            imageUrl: imageUrl,
+            // placeholder: (_, imageurl) => Container(),
+            progressIndicatorBuilder: (_, imageUrl, downloaded) => isLoading ? AppWidgets.CustomAnimationProgress() : Container(),
+            // fadeOutCurve: Curves.,
+            errorWidget: (_, imageUrl, error) => Container(
+              width: width.w,
+              height: height.r,
+              color: Colors.white,
+              child: Image.asset(
+                  width: width.w,
+                  height: height.r,
+                  fit: BoxFit.scaleDown,
+                  '${Const.images}logo.png'),
+            )),
+      ),
+    );
   }
 
 
@@ -386,3 +439,47 @@ class NoDataItem extends StatelessWidget {
     );
   }
 }
+
+
+/*
+* TODO CODE PACKAGE SLIDER
+*
+* CarouselSlider(
+              options: CarouselOptions(
+                  height: 400.0,
+                aspectRatio: 16/9,
+                viewportFraction: 0.7,
+                initialPage: 0,
+                enableInfiniteScroll: true,
+                reverse: false,
+                autoPlay: false,
+                autoPlayInterval: const Duration(seconds: 3),
+                autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                autoPlayCurve: Curves.fastOutSlowIn,
+                enlargeCenterPage: true,
+                enlargeFactor: 0.3,
+                // onPageChanged: callbackFunction,
+                scrollDirection: Axis.horizontal,
+              ),
+              items: _controller.listCategories.map((i) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                        width: MediaQuery.of(context).size.width,
+                        margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                        decoration: const BoxDecoration(
+                            color: Colors.white
+                        ),
+                        child: Container(
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadiusDirectional.circular(20.r)
+                          ),
+                          child: CachedImage(imageUrl: i.image),
+                        )
+                    );
+                  },
+                );
+              }).toList(),
+            )
+* */

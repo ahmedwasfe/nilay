@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:nilay/model/vendors_orders.dart';
+import 'package:nilay/model/test/vendors_orders.dart';
 import 'package:nilay/ui/orders/vendor_orders_screen.dart';
 import 'package:nilay/utils/app_color.dart';
 import 'package:nilay/utils/app_helper.dart';
@@ -36,7 +36,7 @@ class VendorItem extends StatelessWidget {
                 height: 114.h,
                 clipBehavior: Clip.antiAlias,
                 decoration: BoxDecoration(
-                    color: Colors.amber,
+                    color: AppColors.colorAppMain,
                     borderRadius: BorderRadiusDirectional.circular(24.r)
                 ),
                 child: CachedImage(imageUrl: vendor.image,

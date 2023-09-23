@@ -1,23 +1,26 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_advanced_switch/flutter_advanced_switch.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 import 'package:get/get.dart';
+import 'package:nilay/controller/home_controller.dart';
+import 'package:nilay/controller/profile_controller.dart';
+import 'package:nilay/controller/settings_controller.dart';
 import 'package:nilay/routes/routes.dart';
-import 'package:nilay/ui/home/home_screen.dart';
-import 'package:nilay/ui/home/pages/home_page.dart';
-import 'package:nilay/ui/general/address_page.dart';
-import 'package:nilay/ui/general/personal_information.dart';
 import 'package:nilay/utils/app_color.dart';
 import 'package:nilay/utils/app_helper.dart';
 import 'package:nilay/utils/app_text.dart';
 import 'package:nilay/utils/components.dart';
 import 'package:nilay/utils/constants.dart';
-import 'package:nilay/utils/preferences_manager.dart';
-
-import '../../general/notifications.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+ ProfilePage({super.key});
+
+  final _controller = Get.put(ProfileController());
+ final _langController = Get.put(SettingsController());
 
   @override
   Widget build(BuildContext context) {
@@ -134,16 +137,15 @@ class ProfilePage extends StatelessWidget {
                 ],
               ),
             ),
-            InkWell(
-              onTap: () => Get.to(MyProfile()),
-              child: Container(
-                margin: EdgeInsetsDirectional.only(top: 38.r, start: 20.r),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    AppText.medium(
-                        text: 'general', color: AppColors.colorTextSub6),
-                    Container(
+            Container(
+              margin: EdgeInsetsDirectional.only(top: 38.r, start: 20.r),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AppText.medium(
+                      text: 'general', color: AppColors.colorTextSub6),
+                  GestureDetector(
+                    child: Container(
                       padding: EdgeInsetsDirectional.symmetric(vertical: 10.r),
                       margin: EdgeInsetsDirectional.only(top: 20.r, end: 20.r),
                       child: Row(
@@ -162,30 +164,33 @@ class ProfilePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    InkWell(
-                      onTap: () => Get.to(AddressPage()),
-                      child: Container(
-                        padding:
-                            EdgeInsetsDirectional.symmetric(vertical: 10.r),
-                        margin:
-                            EdgeInsetsDirectional.only(top: 24.r, end: 20.r),
-                        child: Row(
-                          children: [
-                            SvgPicture.asset('${Const.icons}icon_address.svg'),
-                            SizedBox(width: 10.w),
-                            Expanded(
-                              child: AppText.medium(
-                                text: 'address',
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14.sp,
-                              ),
+                    onTap: () => Get.toNamed(Routes.personalInfo),
+                  ),
+                  GestureDetector(
+                    onTap: () => Get.toNamed(Routes.addresses),
+                    child: Container(
+                      padding:
+                          EdgeInsetsDirectional.symmetric(vertical: 10.r),
+                      margin:
+                          EdgeInsetsDirectional.only(top: 24.r, end: 20.r),
+                      child: Row(
+                        children: [
+                          SvgPicture.asset('${Const.icons}icon_address.svg'),
+                          SizedBox(width: 10.w),
+                          Expanded(
+                            child: AppText.medium(
+                              text: 'address',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14.sp,
                             ),
-                            SvgPicture.asset(AppHelper.iconArrow())
-                          ],
-                        ),
+                          ),
+                          SvgPicture.asset(AppHelper.iconArrow())
+                        ],
                       ),
                     ),
-                    Container(
+                  ),
+                  GestureDetector(
+                    child: Container(
                       padding: EdgeInsetsDirectional.symmetric(vertical: 10.r),
                       margin: EdgeInsetsDirectional.only(top: 24.r, end: 20.r),
                       child: Row(
@@ -194,7 +199,7 @@ class ProfilePage extends StatelessWidget {
                           SizedBox(width: 10.w),
                           Expanded(
                             child: AppText.medium(
-                              text: 'favorites',
+                              text: 'favorite',
                               fontWeight: FontWeight.w400,
                               fontSize: 14.sp,
                             ),
@@ -203,169 +208,207 @@ class ProfilePage extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Container(
-                      padding: EdgeInsetsDirectional.symmetric(vertical: 10.r),
-                      margin: EdgeInsetsDirectional.only(top: 24.r, end: 20.r),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset('${Const.icons}icon_wallet.svg'),
-                          SizedBox(width: 10.w),
-                          Expanded(
-                            child: AppText.medium(
-                              text: 'e-wallet',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14.sp,
-                            ),
+                    onTap: () {
+                      log('Click');
+                      HomeController controller = Get.find();
+                      controller.getCurrentNavIndex(navIndex: 1);
+                    },
+                  ),
+                  Container(
+                    padding: EdgeInsetsDirectional.symmetric(vertical: 10.r),
+                    margin: EdgeInsetsDirectional.only(top: 24.r, end: 20.r),
+                    child: Row(
+                      children: [
+                        SvgPicture.asset('${Const.icons}icon_wallet.svg'),
+                        SizedBox(width: 10.w),
+                        Expanded(
+                          child: AppText.medium(
+                            text: 'e-wallet',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14.sp,
                           ),
-                          SvgPicture.asset(AppHelper.iconArrow())
-                        ],
-                      ),
+                        ),
+                        SvgPicture.asset(AppHelper.iconArrow())
+                      ],
                     ),
-                    Container(
-                      padding: EdgeInsetsDirectional.symmetric(vertical: 10.r),
-                      margin: EdgeInsetsDirectional.only(top: 24.r, end: 20.r),
-                      child: Row(
-                        children: [
-                          SvgPicture.asset(
-                              '${Const.icons}icon_payment_methods.svg'),
-                          SizedBox(width: 10.w),
-                          Expanded(
-                            child: AppText.medium(
-                              text: 'payment_methods',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14.sp,
-                            ),
+                  ),
+                  Container(
+                    padding: EdgeInsetsDirectional.symmetric(vertical: 10.r),
+                    margin: EdgeInsetsDirectional.only(top: 24.r, end: 20.r),
+                    child: Row(
+                      children: [
+                        SvgPicture.asset(
+                            '${Const.icons}icon_payment_methods.svg'),
+                        SizedBox(width: 10.w),
+                        Expanded(
+                          child: AppText.medium(
+                            text: 'payment_methods',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14.sp,
                           ),
-                          SvgPicture.asset(AppHelper.iconArrow())
-                        ],
-                      ),
+                        ),
+                        SvgPicture.asset(AppHelper.iconArrow())
+                      ],
                     ),
-                    Container(
-                        margin: EdgeInsetsDirectional.only(top: 38.r),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              AppText.medium(
-                                  text: 'settings',
-                                  color: AppColors.colorTextSub6),
-                              InkWell(
-                                onTap: () => Get.to(NotificationsPage()),
-                                child: Container(
-                                  padding: EdgeInsetsDirectional.symmetric(
-                                      vertical: 10.r),
-                                  margin: EdgeInsetsDirectional.only(
-                                      top: 24.r, end: 20.r),
-                                  child: Row(
-                                    children: [
-                                      SvgPicture.asset(
-                                          '${Const.icons}icon_notifications.svg'),
-                                      SizedBox(width: 10.w),
-                                      Expanded(
-                                        child: AppText.medium(
-                                          text: 'notifications',
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 14.sp,
-                                        ),
+                  ),
+                  Container(
+                      margin: EdgeInsetsDirectional.only(top: 38.r),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AppText.medium(
+                                text: 'settings',
+                                color: AppColors.colorTextSub6),
+                            InkWell(
+                              onTap: () => Get.toNamed(Routes.notifications),
+                              child: Container(
+                                padding: EdgeInsetsDirectional.symmetric(
+                                    vertical: 10.r),
+                                margin: EdgeInsetsDirectional.only(
+                                    top: 24.r, end: 20.r),
+                                child: Row(
+                                  children: [
+                                    SvgPicture.asset(
+                                        '${Const.icons}icon_notifications.svg'),
+                                    SizedBox(width: 10.w),
+                                    Expanded(
+                                      child: AppText.medium(
+                                        text: 'notifications',
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14.sp,
                                       ),
-                                      SvgPicture.asset(AppHelper.iconArrow())
-                                    ],
+                                    ),
+                                    SvgPicture.asset(AppHelper.iconArrow())
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsetsDirectional.symmetric(
+                                  vertical: 10.r),
+                              margin: EdgeInsetsDirectional.only(
+                                  top: 24.r, end: 20.r),
+                              child: Row(
+                                children: [
+                                  SvgPicture.asset(
+                                      '${Const.icons}icon_language.svg'),
+                                  SizedBox(width: 10.w),
+                                  Expanded(
+                                    child: AppText.medium(
+                                      text: 'languages',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14.sp,
+                                    ),
                                   ),
-                                ),
+                                   Row(
+                                    children: [
+                                      AppText.medium(text: 'AR', fontWeight: FontWeight.w400),
+                                      SizedBox(width: 8.w),
+                                      GetBuilder<ProfileController>(builder: (controller) {
+                                       return FlutterSwitch(
+                                         width: 50.w,
+                                         height: 28.0,
+                                         valueFontSize: 25.0,
+                                         toggleSize: 30.0,
+                                         value: _controller.checked,
+                                         borderRadius: 20.0,
+                                         padding: 2.8,
+                                         showOnOff: false,
+                                         activeColor: AppColors.colorAppMain,
+                                         inactiveColor: AppColors.colorAppMain,
+                                         onToggle: (val) {
+                                             _controller.checked = val;
+                                             if(_controller.checked){
+                                               _langController.saveLanguage('en');
+                                             }else {
+                                               _langController.saveLanguage('ar');
+                                             }
+                                             _controller.update();
+                                         },
+                                       );
+                                     }),
+                                      SizedBox(width: 8.w),
+                                      AppText.medium(text: 'EN',  fontWeight: FontWeight.w400),
+                                    ],
+                                  )
+
+                                ],
                               ),
-                              Container(
-                                padding: EdgeInsetsDirectional.symmetric(
-                                    vertical: 10.r),
-                                margin: EdgeInsetsDirectional.only(
-                                    top: 24.r, end: 20.r),
-                                child: Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                        '${Const.icons}icon_language.svg'),
-                                    SizedBox(width: 10.w),
-                                    Expanded(
-                                      child: AppText.medium(
-                                        text: 'languages',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14.sp,
-                                      ),
+                            ),
+                          ])),
+                  Container(
+                      margin: EdgeInsetsDirectional.only(top: 38.r),
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            AppText.medium(
+                                text: 'help_center',
+                                color: AppColors.colorTextSub6),
+                            Container(
+                              padding: EdgeInsetsDirectional.symmetric(
+                                  vertical: 10.r),
+                              margin: EdgeInsetsDirectional.only(
+                                  top: 24.r, end: 20.r),
+                              child: Row(
+                                children: [
+                                  SvgPicture.asset(
+                                      '${Const.icons}icon_faq.svg'),
+                                  SizedBox(width: 10.w),
+                                  Expanded(
+                                    child: AppText.medium(
+                                      text: 'faq',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14.sp,
                                     ),
-                                    SvgPicture.asset(AppHelper.iconArrow())
-                                  ],
-                                ),
+                                  ),
+                                  SvgPicture.asset(AppHelper.iconArrow())
+                                ],
                               ),
-                            ])),
-                    Container(
-                        margin: EdgeInsetsDirectional.only(top: 38.r),
-                        child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              AppText.medium(
-                                  text: 'help_center',
-                                  color: AppColors.colorTextSub6),
-                              Container(
-                                padding: EdgeInsetsDirectional.symmetric(
-                                    vertical: 10.r),
-                                margin: EdgeInsetsDirectional.only(
-                                    top: 24.r, end: 20.r),
-                                child: Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                        '${Const.icons}icon_faq.svg'),
-                                    SizedBox(width: 10.w),
-                                    Expanded(
-                                      child: AppText.medium(
-                                        text: 'faq',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14.sp,
-                                      ),
+                            ),
+                            Container(
+                              padding: EdgeInsetsDirectional.symmetric(
+                                  vertical: 10.r),
+                              margin: EdgeInsetsDirectional.only(
+                                  top: 24.r, end: 20.r),
+                              child: Row(
+                                children: [
+                                  SvgPicture.asset(
+                                      '${Const.icons}icon_contact_us.svg'),
+                                  SizedBox(width: 10.w),
+                                  Expanded(
+                                    child: AppText.medium(
+                                      text: 'contact_us',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14.sp,
                                     ),
-                                    SvgPicture.asset(AppHelper.iconArrow())
-                                  ],
-                                ),
+                                  ),
+                                  SvgPicture.asset(AppHelper.iconArrow())
+                                ],
                               ),
-                              Container(
-                                padding: EdgeInsetsDirectional.symmetric(
-                                    vertical: 10.r),
-                                margin: EdgeInsetsDirectional.only(
-                                    top: 24.r, end: 20.r),
-                                child: Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                        '${Const.icons}icon_contact_us.svg'),
-                                    SizedBox(width: 10.w),
-                                    Expanded(
-                                      child: AppText.medium(
-                                        text: 'contact_us',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14.sp,
-                                      ),
+                            ),
+                            Container(
+                              padding: EdgeInsetsDirectional.symmetric(
+                                  vertical: 10.r),
+                              margin: EdgeInsetsDirectional.only(
+                                  top: 24.r, end: 20.r),
+                              child: Row(
+                                children: [
+                                  SvgPicture.asset(
+                                      '${Const.icons}icon_privacy_policy.svg'),
+                                  SizedBox(width: 10.w),
+                                  Expanded(
+                                    child: AppText.medium(
+                                      text: 'privacy_policy',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14.sp,
                                     ),
-                                    SvgPicture.asset(AppHelper.iconArrow())
-                                  ],
-                                ),
+                                  ),
+                                  SvgPicture.asset(AppHelper.iconArrow())
+                                ],
                               ),
-                              Container(
-                                padding: EdgeInsetsDirectional.symmetric(
-                                    vertical: 10.r),
-                                margin: EdgeInsetsDirectional.only(
-                                    top: 24.r, end: 20.r),
-                                child: Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                        '${Const.icons}icon_privacy_policy.svg'),
-                                    SizedBox(width: 10.w),
-                                    Expanded(
-                                      child: AppText.medium(
-                                        text: 'privacy_policy',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14.sp,
-                                      ),
-                                    ),
-                                    SvgPicture.asset(AppHelper.iconArrow())
-                                  ],
-                                ),
-                              ),
-                              Container(
+                            ),
+                            GestureDetector(
+                              child: Container(
                                 padding: EdgeInsetsDirectional.symmetric(
                                     vertical: 10.r),
                                 margin: EdgeInsetsDirectional.only(
@@ -385,31 +428,30 @@ class ProfilePage extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                            ])),
-                    Container(
-                      margin:
-                          EdgeInsetsDirectional.only(top: 56.h, bottom: 40.h),
-                      child: AppWidgets.CustomButton(
-                          text: 'delete_account',
-                          width: 350.w,
-                          height: 48.h,
-                          radius: 24.r,
-                          textColor: AppColors.colorErrorText,
-                          background: AppColors.colorErrorBG,
-                          borderColor: AppColors.colorErrorBG,
-                          isUpperCase: false,
-                          // fontfamily: Const.appFont,
-                          fontWeight: FontWeight.w400,
-                          click: () {
-                            PreferencesManager.clearData(
-                                key: Const.KEY_USER_DATA);
-                            PreferencesManager.clearData(
-                                key: Const.KEY_USER_TOKEN);
-                            Get.toNamed(Routes.signIn);
-                          }),
-                    )
-                  ],
-                ),
+                              onTap: () => _controller.showAccountBottomSheet(
+                                context,
+                              title: 'logout_account',
+                              message: 'sure_logout_account',
+                              type: Const.KEY_SHEET_LOGOUT),
+                            ),
+                          ])),
+                  Container(
+                    margin:
+                        EdgeInsetsDirectional.only(top: 56.h, bottom: 40.h),
+                    child: AppWidgets.CustomButton(
+                        text: 'delete_account',
+                        width: 350.w,
+                        height: 48.h,
+                        radius: 24.r,
+                        textColor: AppColors.colorErrorText,
+                        background: AppColors.colorErrorBG,
+                        borderColor: AppColors.colorErrorBG,
+                        isUpperCase: false,
+                        // fontfamily: Const.appFont,
+                        fontWeight: FontWeight.w400,
+                        click: () => _controller.showAccountBottomSheet(context, title: 'delete_account', message: 'sure_delete_account', type: Const.KEY_SHEET_DELETE_ACCOUNT)),
+                  )
+                ],
               ),
             ),
           ],

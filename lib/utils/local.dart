@@ -74,11 +74,18 @@ class AppTranslations implements Translations {
           'messages': 'الرسائل',
           'my_profile': 'الملف الشخصي',
           'profile': 'الملف الشخصي',
+          'profile_': 'حسابي',
           'search': 'البحث',
           'services': 'الخدمات',
           'top_five': 'الخمسة الأوائل',
           'recent_visited': 'تمت زيارته مؤخرًا',
           'see_all': 'عرض الكل',
+          'stores_': 'المتاجر',
+          'wedding_halls': 'قاعات أفراح',
+          'beauty_centers': 'مراكز التجميل',
+          'photo_sessiones': 'جلسات الصور',
+          'wedding_dress': 'فساتين زفاف',
+
           // TODO FAVORITE
           'top_favorite': 'أعلى المفضلة',
           'dont_have_favourite': 'آسف ليس لديك أي مفضلة الآن!',
@@ -108,26 +115,80 @@ class AppTranslations implements Translations {
           'privacy_policy': 'سياسة الخصوصية',
           'logout': 'تسجيل الخروج',
           'delete_account': 'حذف الحساب',
+          'logout_account': 'تسجيل الخروج',
+
+          'sure_logout_account': 'هل أنت متأكد أنك تريد تسجيل الخروج: ',
+          'sure_delete_account': 'هل أنت متأكد من حذف حسابك: ',
+          'account': 'حساب؟',
+          'profile_modified_success': 'تم تعديل معلومات الملف الشخصي بنجاح',
 
           // TODO ORDERS
           'size': 'الحجم:',
           'color': 'اللون:',
           'date': 'التاريخ:',
           'time': 'الوقت:',
+          'delete_order': 'حذف الطلب',
+          'delete': 'حذف',
+          'cancel': 'إلغاء',
 
-          //TODO ASSDESS PAGE
+          //TODO ADDRESS PAGE
           'add_new_address': 'اضافة عنوان جديد',
           'no_address_yet': 'لا يوجد عناوين',
           'add_location': 'أضف عنوانك فقط لتحسين تجربتك',
           'governorate': 'المحافظة',
           'region': 'المنطقة',
           'street': 'الشارع',
+          'street_required': 'الشارع *',
+          'house_number_required': 'رقم البيت *',
           'house_number': 'رقم البيت',
+          'select_your_governorate': 'الرجاء تحديد المحافظة',
+          'select_your_region': 'الرجاء تحديد المنطقة',
+          'please_enter_street': 'الرجاء إدخال الشارع',
+          'please_enter_house_number': 'الرجاء إدخال رقم المنزل',
 
           //TODO NOTIFICATION PAGE
           'notification': 'اشعارات',
           'no_notification_yet': 'لا يوجد اشعارات',
           'notification_alert': 'عند تلقيك اشعارات سوف تظهر هنا ',
+
+          // TODO VENDORS
+          // TODO STORES
+          'all_stores': 'كل المتاجر',
+          'new_arrival': 'الجديد',
+          'best_seller': 'الأكثر مبيعًا',
+          'most_popular': 'الشائعة',
+          'details': 'التفاصيل',
+          // TODO PRODUCT DETAILS
+          'choose_color': 'اختر اللون',
+          'choose_size': 'اختر الحجم',
+          'quantity': 'الكمية',
+          'add_to_cart': 'إضف إلى السلة',
+          'total': 'المجموع',
+          'confirmation': 'تأكيد',
+          // TODO CART
+          'carts': 'السلة',
+          'orders': 'الطلبات',
+          'price': 'السعر: ',
+          'remove_from_orders': 'إزالة من الطلبات',
+
+          // TODO BEAUTY CENTERS
+          'centers': 'المراكز',
+          'all_centers': 'كل المراكز',
+
+          // TODO FILTER
+          'filter': 'التصفية',
+          'all': 'الكل',
+          'categories': 'الأقسام',
+          'sales': 'مبيعات',
+          'rating': 'التقييم',
+          'time_': 'الوقت',
+          'online': 'متاح',
+          'location': 'الموقع',
+          'nearby_places': 'الاماكن المجاورة',
+          'price_range': 'نطاق السعر',
+          'apply': 'تطبيق',
+          'reset': 'إعادة',
+          'type': 'النوع',
         },
         "en": {
           // TODO Language & Country
@@ -199,11 +260,17 @@ class AppTranslations implements Translations {
           'messages': 'Messages',
           'my_profile': 'My Profile',
           'profile': 'Profile',
+          'profile_': 'Profile',
           'search': 'Search',
           'services': 'Services',
           'top_five': 'Top five',
           'recent_visited': 'Recent Visited',
           'see_all': 'See all',
+          'stores_': 'Stores',
+          'wedding_halls': 'Wedding halls',
+          'beauty_centers': 'Beauty centers',
+          'photo_sessiones': 'Photo session\'s',
+          'wedding_dress': 'Wedding Dress\'s',
 
           // TODO FAVORITE
           'top_favorite': 'Top Favourite',
@@ -234,13 +301,23 @@ class AppTranslations implements Translations {
           'contact_us': 'Contact us',
           'privacy_policy': 'Privacy Policy',
           'logout': 'Logout',
+          'logout_account': 'Logout Account',
           'delete_account': 'Delete Account',
+
+          'sure_logout_account': 'Are you sure you want to log out of :',
+          'sure_delete_account': 'Are you sure to Delete your Account:',
+          'account': 'account?',
+          'profile_modified_success': 'Profile info modified successfully',
+
 
           // TODO ORDERS
           'size': 'Size:',
           'color': 'Color:',
           'date': 'Date:',
           'time': 'Time:',
+          'delete_order': 'Delete Order',
+          'delete': 'Delete',
+          'cancel': 'Cancel',
 
           //TODO ADDRESS PAGE
           'add_new_address': 'Add New Address',
@@ -250,13 +327,61 @@ class AppTranslations implements Translations {
           'governorate': 'Governorate',
           'region': 'Region',
           'street': 'Street',
+          'street_required': 'street *',
+          'house_number_required': 'House number *',
           'house_number': 'House Number',
+          'select_your_governorate': 'Please select governorate',
+          'select_your_region': 'Please select street',
+          'please_enter_street': 'Please enter street',
+          'please_enter_house_number': 'Please enter house number',
 
           //TODO NOTIFICATION PAGE
           'notification': 'Notification',
           'no_notification_yet': 'No Notification Yet',
           'notification_alert':
               'When you get notifications, it will show up here',
+
+          // TODO VENDORS
+          // TODO STORES
+          'all_stores': 'All stores',
+          'new_arrival': 'New Arrival',
+          'best_seller': 'Best Seller',
+          'most_popular': 'Most Popular',
+          'details': 'Details',
+          // TODO PRODUCT DETAILS
+          'choose_color': 'Choose Color',
+          'choose_size': 'Choose Size',
+          'quantity': 'Quantity',
+          'add_to_cart': 'Add to cart',
+          'total': 'Total',
+          'confirmation': 'Confirmation',
+          // TODO CART
+          'carts': 'Cart’s',
+          'orders': 'Order’s',
+          'price': 'Price: ',
+          'remove_from_orders': 'Remove From Order’s',
+
+          // TODO BEAUTY CENTERS
+          'centers': 'Centers',
+          'all_centers': 'All Centers',
+
+          // TODO FILTER
+          'filter': 'Filter',
+          'all': 'All',
+          'categories': 'Categories',
+          'sales': 'Sales',
+          'rating': 'Rating',
+          'time_': 'Time',
+          'online': 'Online',
+          'location': 'Location',
+          'nearby_places': 'Nearby places',
+          'price_range': 'Price Range',
+          'apply': 'Apply',
+          'reset': 'Reset',
+          'type': 'Type',
+          'sizes': 'Sizes',
+          'colors': 'Colors',
+
         }
       };
 }

@@ -25,24 +25,8 @@ class MyOrdersPage extends StatelessWidget {
         leadingWidth: 78.w,
         toolbarHeight: 60.h,
         leading: Container(
-          width: 35.w,
-          height: 35.h,
           margin: EdgeInsetsDirectional.only(start: 20.r),
-          child: Container(
-            width: 35.w,
-            height: 35.h,
-            clipBehavior: Clip.antiAlias,
-            decoration: BoxDecoration(
-              color: Colors.cyan,
-                borderRadius: BorderRadiusDirectional.circular(50.r)
-            ),
-            child: CachedImage(
-                width: 35.w,
-                height: 35.h,
-              isLoading: false,
-                fit: BoxFit.cover,
-                imageUrl: AppHelper.getCurrentUser()!.photo!),
-          ),
+          child: CircleCachedImage(imageUrl: AppHelper.getCurrentUser()!.photo!, isLoading: false),
         ),
         actions: [
           Container(

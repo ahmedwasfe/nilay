@@ -201,11 +201,11 @@ class SignInController extends GetxController{
   void login() {
     Random random = Random();
     user.uuid = random.nextInt(10000000).toString();
-    user.name = 'AHMED';
-    user.email = '';
+    user.name = 'Ahmed Wasfe';
+    user.email = 'ahmedwasfe84@gmail.com';
     user.mobile = phoneController.text;
     user.photo = Const.defaultUserImage1;
-    user.provider = 'Phone Number';
+    user.provider = '';
     PreferencesManager.saveUserData(key: Const.KEY_USER_DATA, user: user)
         .then((value) {
       if(value != null){

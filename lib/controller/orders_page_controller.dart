@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:nilay/model/orders/store_orders.dart';
-import 'package:nilay/model/vendors_orders.dart';
+import 'package:nilay/model/test/store_orders.dart';
+import 'package:nilay/model/test/vendors_orders.dart';
 import 'package:nilay/utils/app_color.dart';
 import 'package:nilay/utils/app_text.dart';
 import 'package:nilay/utils/components.dart';
@@ -755,7 +755,7 @@ class OrdersPageController extends GetxController{
                     child: AppText.medium(text: 'Delete Order', color: AppColors.colorAppMain)),
                 Expanded(
                   child: Container(
-                    margin: EdgeInsetsDirectional.only(start: 16.r, top: 16.r, end: 16.r),
+                    margin: EdgeInsetsDirectional.only(start: 8.r, top: 16.r, end: 8.r),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -825,12 +825,33 @@ class OrdersPageController extends GetxController{
                         SizedBox(height: 16.h),
                         Row(
                           children: [
-                            AppWidgets.CustomButton(
-                                text: 'Cancel',
-                                width: 160.w,
-                                height: 48.h,
-                                background: AppColors.colorErrorBG,
-                                click: () {}),
+                            Expanded(
+                              child: AppWidgets.CustomButton(
+                                  text: 'cancel',
+                                  width: 120.w,
+                                  height: 48.h,
+                                  isUpperCase: false,
+                                  background: AppColors.colorGray1,
+                                  borderColor: AppColors.colorGray1,
+                                  textColor: AppColors.colorAppMain,
+                                  fontWeight: FontWeight.w400,
+                                  radius: 40.r,
+                                  click: () => Navigator.pop(context)),
+                            ),
+                            SizedBox(width: 8.w),
+                            Expanded(
+                              child: AppWidgets.CustomButton(
+                                  text: 'delete',
+                                  width: 120.w,
+                                  height: 48.h,
+                                  isUpperCase: false,
+                                  background: AppColors.colorErrorBG,
+                                  borderColor: AppColors.colorErrorBG,
+                                  textColor: AppColors.colorErrorText,
+                                  fontWeight: FontWeight.w400,
+                                  radius: 40.r,
+                                  click: () {}),
+                            ),
                           ],
                         )
                       ],

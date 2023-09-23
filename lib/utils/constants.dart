@@ -111,6 +111,70 @@ class Const {
   static const String storeOrder21 = 'https://i.postimg.cc/GhQmhr3G/nail-pedicure-saloon-modern-with-nail-polish-colorful-row-79295-3811.jpg';
   static const String storeOrder22 = 'https://i.postimg.cc/Y9YpcBy4/nail-pedicure-saloon-modern-with-nail-polish-colorful-row-79295-3806.jpg';
 
+  // TODO VENDORS
+  // TODO STORES SLIDER
+  static const String storesHomeSlider1 = 'https://i.postimg.cc/8kZdwn6d/front-view-young-pretty-female-holding-sale-writing-black-wall-model-beauty-emotions-red-shopping-fa.jpg';
+  static const String storesHomeSlider2 = 'https://i.postimg.cc/vZYcjQwc/front-view-smiling-young-woman-with-measure-tape-sale-nameplate-white-background-losing-measuring-sl.jpg';
+  static const String storesHomeSlider3 = 'https://i.postimg.cc/j2Ts7XsL/young-fashion-woman-holding-shopping-bags-discount-percentage-through-torn-paper-hole-wall-140725-10.jpg';
+  static const String storesHomeSlider4 = 'https://i.postimg.cc/NFbwrvJz/full-shot-smiley-woman-studio-23-2149220648.jpg';
+  static const String storesHomeSlider5 = 'https://i.postimg.cc/ZKqGDgDJ/shopping-sale-93675-7813.jpg';
+  static const String storesHomeSlider6 = 'https://i.postimg.cc/FscBq4V5/front-view-young-female-holding-red-sale-board-brown-wall-140725-152464.jpg';
+
+  static const String storeSlider1 = 'https://i.postimg.cc/v8XPZ7B1/megaphone-women-shouting-pin-up-girl-with-red-dress-shouting-trough-megaphone-with-sale-tags-435174.jpg';
+  static const String storeSlider2 = 'https://i.postimg.cc/BbGXW1W4/happy-woman-holding-paper-shopping-bags-with-percent-signs-pink-background-discount-concept-495423-4.jpg';
+  static const String storeSlider3 = 'https://i.postimg.cc/0yGnh7L2/crying-woman-with-shopping-packets-sale-tablet-23-2147960685.jpg';
+  static const String storeSlider4 = 'https://i.postimg.cc/zDRc0HX3/woman-holding-sale-card-paper-with-percent-mark-announce-discounts-416530-34403.jpg';
+  static const String storeSlider5 = 'https://i.postimg.cc/j2XNZhDG/appealing-shopaholic-woman-standing-yellow-wall-197531-16461.jpg';
+  static const String storeSlider6 = 'https://i.postimg.cc/XJKyYgkp/beauty-fashion-shopping-happy-people-concept-young-woman-purple-dress-high-heels-with-sale-discount.jpg';
+
+  static const String imageFashions = 'https://i.postimg.cc/W4Ys6qpX/girl-purple-blouse-black-pants-is-sitting-chair-looking-into-camera-holding-folder-against-backgroun.jpg';
+  static const String imageSwimwear = 'https://i.postimg.cc/X7jD3HkB/lovable-barefooted-woman-stylish-attire-dancing-hot-summer-day-outdoor-portrait-cute-blonde-woman-de.jpg';
+  static const String imagePlusSize = 'https://i.postimg.cc/bwdCSZMz/front-view-young-beautiful-woman-colored-blouse-blue-jeans-holding-shopping-packages-posing-smiling.jpg';
+  static const String imageDress = 'https://i.postimg.cc/HkHkbNPW/front-view-elegant-girl-red-dress-leans-chair-looks-camera-8353-11655.jpg';
+  static const String imageBottoms = 'https://i.postimg.cc/Njjry4jh/full-length-view-dreamy-pinup-girl-ginger-woman-denim-shorts-standing-blue-space-197531-15132.jpg';
+  // TODO STORES CATEGORIES
+  static const String storesHomeCategory1 = 'https://i.postimg.cc/C13WBLs7/attractive-stylish-woman-choosing-apparel-clothing-store-285396-4624.jpg';
+  static const String storesHomeCategory2 = 'https://i.postimg.cc/BnzNQ7gc/makeup-products-glossy-cosmetic-bag-pink-background-23-2148181473.jpg';
+  static const String storesHomeCategory3 = 'https://i.postimg.cc/FFqKpjDC/glasses-cosmetics-near-stylish-makeup-bag-23-2147779029.jpg';
+  static const String storesHomeCategory4 = 'https://i.postimg.cc/2yXTbHYD/set-body-care-products-23-2147803537.jpg';
+  static const String storesHomeCategory5 = 'https://i.postimg.cc/kX6vYv92/woman-choosing-detergent-supermarket-329181-9920.jpg';
+
+  // TODO VENDORS
+  // TODO BEAUTY CENTER SLIDER
+  static const String beautyHomeSlider1 = 'https://i.postimg.cc/qq2bVhXt/portrait-beautiful-blonde-woman-144627-22627.jpg';
+  static const String beautyHomeSlider2 = 'https://i.postimg.cc/L6X2Smgy/beauty-portrait-beautiful-woman-touching-her-face-147620-193.jpg';
+  static const String beautyHomeSlider3 = 'https://i.postimg.cc/nrKkw8pB/beautiful-woman-applying-make-up-85869-6163.jpg';
+  static const String beautyHomeSlider4 = 'https://i.postimg.cc/KvZrvHmp/image-careful-positive-cosmetologist-making-anti-wrinkle-facial-massage-176532-3795.jpg';
+  static const String beautyHomeSlider5 = 'https://i.postimg.cc/LXtLmzwM/sophisticated-beautiful-caucasian-brunette-sitting-beauty-salon-while-makeup-artist-putting-blush-wo.jpg';
+  static const String beautyHomeSlider6 = 'https://i.postimg.cc/FsWcFFW1/make-up-artist-making-stylish-make-up-pretty-woman-488220-49184.jpg';
+
+  // TODO TOP FIVE
+  static const String topFiveCenters1 = 'https://i.postimg.cc/v8jbGp7b/special-cleaning-face-young-beautiful-client-7502-7576.jpg';
+  static const String topFiveCenters2 = 'https://i.postimg.cc/7LWwbdv3/cheerful-woman-with-stylist-doing-hairstyle-studio-23-2148113057.jpg';
+  static const String topFiveCenters3 = 'https://i.postimg.cc/X7LMpmdr/woman-taking-care-girl-salon-23-2147769838.jpg';
+  static const String topFiveCenters4 = 'https://i.postimg.cc/XYPz5bJY/beautiful-woman-with-long-brown-straight-hairs-elegance-red-nails-186202-7829.jpg';
+  static const String topFiveCenters5 = 'https://i.postimg.cc/7YYsQ6JL/woman-cosmetology-studio-procedures-1157-33862.jpg';
+  static const String topFiveCenters6 = 'https://i.postimg.cc/HLkq1KwW/beautiful-young-pretty-woman-with-healthy-skin-pink-flowers-close-face-isolated-white-186202-7858.jpg';
+  static const String topFiveCenters7 = 'https://i.postimg.cc/SRS8g60P/artist-applying-make-up-client-23-2148328778.jpg';
+  static const String topFiveCenters8 = 'https://i.postimg.cc/G25rfR61/professional-makeup-artist-working-with-young-woman-23-2148113098.jpg';
+  static const String topFiveCenters9 = 'https://i.postimg.cc/DyFJddQd/make-up-artist-working-with-beauty-model-applying-eyeshadow-palette-dark-studio-background-116547-10.jpg';
+  static const String topFiveCenters10 = 'https://i.postimg.cc/LsFrn5FX/hairdresser-finishing-head-washing-sink-23-2147769805.jpg';
+  static const String topFiveCenters11 = 'https://i.postimg.cc/xCh7V15n/beautiful-fashion-woman-with-red-nails-creative-hairstyle-makeup-186202-2812.jpg';
+  static const String topFiveCenters12 = 'https://i.postimg.cc/9XBTknQN/beauty-woman-applying-makeup-93675-132238.jpg';
+  static const String topFiveCenters13 = 'https://i.postimg.cc/NGVYQgFy/closeup-face-beautiful-woman-with-multicolored-nails-186202-6207.jpg';
+  static const String topFiveCenters14 = 'https://i.postimg.cc/vHrQhJ8c/young-beautiful-stylish-woman-wedding-dress-285396-7837.jpg';
+  static const String topFiveCenters15 = 'https://i.postimg.cc/Y0S1R6YS/closeup-portrait-young-beautiful-woman-with-healthy-clean-skin-face-pretty-adult-girl-with-flower-ne.jpg';
+  static const String topFiveCenters16 = 'https://i.postimg.cc/hPWmfR3j/young-beautiful-woman-with-flowers-near-face-186202-5631.jpg';
+  static const String topFiveCenters17 = 'https://i.postimg.cc/C1p0bJyj/closeup-portrait-beautiful-young-woman-with-pink-flowers-hair-gray-background-186202-6846.jpg';
+
+  // TODO SERVICES
+  static const String serviceCenter1 = 'https://i.postimg.cc/8kBzRZdp/woman-getting-treatment-hairdresser-shop-23-2149229743.jpg';
+  static const String serviceCenter2 = 'https://i.postimg.cc/bvksKpnb/woman-getting-treatment-hairdresser-shop-23-2149229760.jpg';
+  static const String serviceCenter3 = 'https://i.postimg.cc/jjZGqJyr/woman-with-doctor-cosmetology-studio-1157-33838.jpg';
+  static const String serviceCenter4 = 'https://i.postimg.cc/FsTWLQ7j/make-up-artist-doing-professional-make-up-young-woman-104603-5351.jpg';
+  static const String serviceCenter5 = 'https://i.postimg.cc/W4ytFtPQ/side-view-stylist-with-palette-applying-makeup-model-23-2147783893.jpg';
+  static const String serviceCenter6 = 'https://i.postimg.cc/ZRFtkDjV/pretty-model-woman-beauty-salon-is-making-evening-make-up-231208-3586.jpg';
+
 
   // TODO VENDOR TYPES
   static const String KEY_VENDOR_STORE = 'store';
@@ -142,6 +206,9 @@ class Const {
   static const String KEY_FORGET_EMAIL = 'Email';
   static const String KEY_FORGET_PHONE = 'Phone';
 
+  // TODO
+  static const String KEY_SHEET_LOGOUT = 'sheet_logout';
+  static const String KEY_SHEET_DELETE_ACCOUNT = 'sheet_delete_account';
   // TODO Settings
 // TODO Default Test Text
   static const String defaultTextAR =
