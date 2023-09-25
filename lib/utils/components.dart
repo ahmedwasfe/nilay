@@ -1,4 +1,5 @@
 import 'dart:core';
+import 'dart:core';
 
 import 'package:awesome_top_snackbar/awesome_top_snackbar.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -65,8 +66,7 @@ class AppWidgets {
       Color backgroundColor = AppColors.colorSnackBaErrorColor,
       Color iconColor = AppColors.colorSnackBaErrorColor,
       Widget? startIcon,
-      Color startIconColor = AppColors.colorErrorText
-      }) {
+      Color startIconColor = AppColors.colorErrorText}) {
     // ScaffoldMessenger.of(context).showSnackBar(
     //     SnackBar(
     //       behavior: SnackBarBehavior.floating,
@@ -139,11 +139,73 @@ class AppWidgets {
           fontWeight: FontWeight.w400,
           fontSize: 13.sp),
       backgroundColor: backgroundColor,
-      starIcon: startIcon ?? Icon(Icons.error_outline_rounded, color: startIconColor),
+      starIcon:
+          startIcon ?? Icon(Icons.error_outline_rounded, color: startIconColor),
       icon: Icon(Icons.close, color: iconColor),
       iconWithDecoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         border: Border.all(color: backgroundColor),
+      ),
+    );
+  }
+}
+
+class CustomButton extends StatelessWidget {
+  String? text;
+  Function()? click;
+  double width = double.infinity;
+  bool isEnable = true;
+  double height = 48.0;
+  Color background = AppColors.colorAppMain;
+  bool isUpperCase = true;
+  Color textColor = Colors.white;
+  double fontSize = 16.0;
+  String fontfamily = Const.appFont;
+  FontWeight fontWeight = FontWeight.w700;
+  double radius = 0.0;
+  double marginLeft = 0.0;
+  Color borderColor = AppColors.colorAppMain;
+  double borderWidth = 1.5;
+
+  CustomButton({
+    super.key,
+    required String text,
+    required Function() click,
+    double width = double.infinity,
+    bool isEnable = true,
+    double height = 48.0,
+    Color background = AppColors.colorAppMain,
+    bool isUpperCase = true,
+    Color textColor = Colors.white,
+    double fontSize = 16.0,
+    String fontfamily = Const.appFont,
+    FontWeight fontWeight = FontWeight.w700,
+    double radius = 0.0,
+    double marginLeft = 0.0,
+    Color borderColor = AppColors.colorAppMain,
+    double borderWidth = 1.5,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(left: marginLeft),
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(radius),
+          color: background,
+          border: Border.all(color: borderColor, width: borderWidth)),
+      child: MaterialButton(
+        onPressed: isEnable ? click : null,
+        child: Text(
+          isUpperCase ? text!.toUpperCase().tr : text!.tr,
+          style: TextStyle(
+              color: textColor,
+              fontSize: fontSize.sp,
+              fontFamily: fontfamily,
+              fontWeight: fontWeight),
+        ),
       ),
     );
   }
@@ -156,7 +218,12 @@ class CachedImage extends StatelessWidget {
   BoxFit fit = BoxFit.cover;
   bool isLoading = true;
 
-  CachedImage({required this.imageUrl, this.width = 272, this.height = 159, this.fit = BoxFit.cover, this.isLoading = true});
+  CachedImage(
+      {required this.imageUrl,
+      this.width = 272,
+      this.height = 159,
+      this.fit = BoxFit.cover,
+      this.isLoading = true});
 
   @override
   Widget build(BuildContext context) {
@@ -166,7 +233,8 @@ class CachedImage extends StatelessWidget {
         fit: BoxFit.cover,
         imageUrl: imageUrl,
         // placeholder: (_, imageurl) => Container(),
-        progressIndicatorBuilder: (_, imageUrl, downloaded) => isLoading ? AppWidgets.CustomAnimationProgress() : Container(),
+        progressIndicatorBuilder: (_, imageUrl, downloaded) =>
+            isLoading ? AppWidgets.CustomAnimationProgress() : Container(),
         // fadeOutCurve: Curves.,
         errorWidget: (_, imageUrl, error) => Container(
               width: width.w,
@@ -179,7 +247,6 @@ class CachedImage extends StatelessWidget {
                   '${Const.images}logo.png'),
             ));
   }
-
 
 // Image(
 //     width: 272.w,
@@ -199,7 +266,13 @@ class CircleCachedImage extends StatelessWidget {
   BoxFit fit = BoxFit.cover;
   bool isLoading = true;
 
-  CircleCachedImage({required this.imageUrl, this.width = 272, this.height = 159, this.radius = 40, this.fit = BoxFit.cover, this.isLoading = true});
+  CircleCachedImage(
+      {required this.imageUrl,
+      this.width = 272,
+      this.height = 159,
+      this.radius = 40,
+      this.fit = BoxFit.cover,
+      this.isLoading = true});
 
   @override
   Widget build(BuildContext context) {
@@ -213,22 +286,22 @@ class CircleCachedImage extends StatelessWidget {
             fit: BoxFit.cover,
             imageUrl: imageUrl,
             // placeholder: (_, imageurl) => Container(),
-            progressIndicatorBuilder: (_, imageUrl, downloaded) => isLoading ? AppWidgets.CustomAnimationProgress() : Container(),
+            progressIndicatorBuilder: (_, imageUrl, downloaded) =>
+                isLoading ? AppWidgets.CustomAnimationProgress() : Container(),
             // fadeOutCurve: Curves.,
             errorWidget: (_, imageUrl, error) => Container(
-              width: width.w,
-              height: height.r,
-              color: Colors.white,
-              child: Image.asset(
                   width: width.w,
                   height: height.r,
-                  fit: BoxFit.scaleDown,
-                  '${Const.images}logo.png'),
-            )),
+                  color: Colors.white,
+                  child: Image.asset(
+                      width: width.w,
+                      height: height.r,
+                      fit: BoxFit.scaleDown,
+                      '${Const.images}logo.png'),
+                )),
       ),
     );
   }
-
 
 // Image(
 //     width: 272.w,
@@ -419,7 +492,8 @@ class NoDataItem extends StatelessWidget {
                 color: AppColors.colorAppSub,
                 borderRadius: BorderRadius.circular(60.r),
               ),
-              child: SvgPicture.asset(icon,
+              child: SvgPicture.asset(
+                icon,
                 fit: BoxFit.scaleDown,
               ),
             )),
@@ -439,7 +513,6 @@ class NoDataItem extends StatelessWidget {
     );
   }
 }
-
 
 /*
 * TODO CODE PACKAGE SLIDER

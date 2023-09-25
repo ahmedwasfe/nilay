@@ -38,7 +38,6 @@ class HomePageController extends GetxController{
     VendorData(name: 'Roze Center', image: Const.imageRozeCenter, rate: '+3', membership: Const.KEY_MEMBERSHIP_BRONZE,vendorType: Const.KEY_VENDOR_BEAUTY_CENTER, isFavorite: false),
     VendorData(name: 'SOO Dress', image: Const.imageOrdersDress7, rate: '+5', membership: Const.KEY_MEMBERSHIP_GOLD,vendorType: Const.KEY_VENDOR_DRESS, isFavorite: false),
     VendorData(name: 'Mera Dress', image: Const.imageOrdersDress4, rate: '+2', membership: Const.KEY_MEMBERSHIP_BRONZE,vendorType: Const.KEY_VENDOR_DRESS, isFavorite: false),
-
   ];
 
 }
