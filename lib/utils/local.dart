@@ -174,6 +174,16 @@ class AppTranslations implements Translations {
           // TODO BEAUTY CENTERS
           'centers': 'المراكز',
           'all_centers': 'كل المراكز',
+          'ratings': 'التقييمات',
+          'available': 'متاح',
+          'album': 'الألبوم',
+          'experts': 'الخبراء',
+          'rate': 'تقييم',
+          'write_comment': 'أكتب تعليقا...',
+
+          'videos': 'فيديوهات',
+          'photos': 'صور',
+
 
           // TODO FILTER
           'filter': 'التصفية',
@@ -364,6 +374,15 @@ class AppTranslations implements Translations {
           // TODO BEAUTY CENTERS
           'centers': 'Centers',
           'all_centers': 'All Centers',
+          'ratings': 'Ratings',
+          'available': 'Available',
+          'album': 'Album',
+          'experts': 'Experts',
+          'rate': 'Rate',
+          'write_comment': 'Write a comment...',
+
+          'videos': 'Video\'s',
+          'photos': 'Photo\'s',
 
           // TODO FILTER
           'filter': 'Filter',

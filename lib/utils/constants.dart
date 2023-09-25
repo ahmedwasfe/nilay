@@ -188,6 +188,9 @@ class Const {
   static const String KEY_MEMBERSHIP_SILVER = 'silver';
   static const String KEY_MEMBERSHIP_BRONZE = 'bronze';
 
+  static const String KEY_VIDEOS = 'videos';
+  static const String KEY_PHOTOS = 'photos';
+
   // TODO  User
   static const String KEY_USER_TOKEN = 'user_token';
   static const String KEY_FIREBASE_TOKEN = 'firebase_token';

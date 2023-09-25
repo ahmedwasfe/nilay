@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:nilay/bindings/forget_password_bindings.dart';
 import 'package:nilay/bindings/signin_bindings.dart';
 import 'package:nilay/bindings/signup_bindings.dart';
-import 'package:nilay/controller/forget_password_controller.dart';
 import 'package:nilay/ui/auth/forget_password/congratulations_screen.dart';
 import 'package:nilay/ui/auth/forget_password/new_password_screen.dart';
 import 'package:nilay/ui/auth/forget_password/select_email_phone_screen.dart';
@@ -23,6 +22,7 @@ import 'package:nilay/ui/orders/vendor_orders_screen.dart';
 import 'package:nilay/ui/orders/vendors_screen.dart';
 import 'package:nilay/ui/splash_screen.dart';
 import 'package:nilay/ui/vendors/beauty_centers/all_beauty_centers_screen.dart';
+import 'package:nilay/ui/vendors/beauty_centers/beauty_centers_services_screen.dart';
 import 'package:nilay/ui/vendors/beauty_centers/beauty_center_screen.dart';
 import 'package:nilay/ui/vendors/beauty_centers/home_beauty_centers_screen.dart';
 import 'package:nilay/ui/vendors/recent_visited_screen.dart';
@@ -34,6 +34,8 @@ import 'package:nilay/ui/vendors/stores/product/product_details_screen.dart';
 import 'package:nilay/ui/vendors/stores/product/products_category_screen.dart';
 import 'package:nilay/ui/vendors/stores/product/products_screen.dart';
 import 'package:nilay/ui/vendors/stores/store_screen.dart';
+import 'package:nilay/ui/vendors/beauty_centers/beauty_centers_experts_screen.dart';
+import 'package:nilay/widget/vendors/beauty_centers/album_beauty_center_screen.dart';
 
 class AppRoutes {
 
@@ -80,6 +82,9 @@ class AppRoutes {
     GetPage(name: Routes.homeBeautyCenter, page: () => HomeBeautyCenterScreen()),
     GetPage(name: Routes.allBeautyCenters, page: () => AppBeautyCentersScreen()),
     GetPage(name: Routes.beautyCenter, page: () => BeautyCenterScreen()),
+    GetPage(name: Routes.allBeautyCenterServices, page: () => BeautyCenterServicesScreen()),
+    GetPage(name: Routes.allBeautyCenterExperts, page: () => BeautyCenterExpertsScreen()),
+    GetPage(name: Routes.albumBeautyCenter, page: () => AlbumBeautyCenterScreen()),
 
     // TODO FILTER
     GetPage(name: Routes.filterAllStores, page: () => FilterAllStoresScreen()),
@@ -123,6 +128,9 @@ class Routes {
   static const homeBeautyCenter = '/home_beauty_center';
   static const allBeautyCenters = '/all_beauty_center';
   static const beautyCenter = '/beauty_center';
+  static const allBeautyCenterServices = '/all_beauty_center_service';
+  static const allBeautyCenterExperts = '/all_beauty_center_experts';
+  static const albumBeautyCenter = '/album_beauty_center';
 
   // TODO FILTERS
   static const filterAllStores = '/filter_all_stores';

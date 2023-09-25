@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:nilay/controller/home_controller.dart';
 import 'package:nilay/controller/orders_page_controller.dart';
 import 'package:nilay/utils/app_color.dart';
 import 'package:nilay/utils/app_helper.dart';
@@ -24,9 +25,15 @@ class MyOrdersPage extends StatelessWidget {
         centerTitle: true,
         leadingWidth: 78.w,
         toolbarHeight: 60.h,
-        leading: Container(
-          margin: EdgeInsetsDirectional.only(start: 20.r),
-          child: CircleCachedImage(imageUrl: AppHelper.getCurrentUser()!.photo!, isLoading: false),
+        leading: InkWell(
+          child: Container(
+            margin: EdgeInsetsDirectional.only(start: 20.r),
+            child: CircleCachedImage(imageUrl: AppHelper.getCurrentUser()!.photo!, isLoading: false),
+          ),
+          onTap: () {
+            HomeController controller = Get.find();
+            controller.getCurrentNavIndex(navIndex: 2);
+          },
         ),
         actions: [
           Container(
