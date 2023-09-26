@@ -10,6 +10,7 @@ import 'package:nilay/ui/auth/forget_password/verification_code_screen.dart';
 import 'package:nilay/ui/auth/signin_screen.dart';
 import 'package:nilay/ui/auth/signup_screen.dart';
 import 'package:nilay/ui/boarding_screen.dart';
+import 'package:nilay/ui/chat/chat_screen.dart';
 import 'package:nilay/ui/filter/filter_all_products_screen.dart';
 import 'package:nilay/ui/filter/filter_all_stores_screen.dart';
 import 'package:nilay/ui/general/address/add_address_screen.dart';
@@ -89,6 +90,9 @@ class AppRoutes {
     // TODO FILTER
     GetPage(name: Routes.filterAllStores, page: () => FilterAllStoresScreen()),
     GetPage(name: Routes.filterAllProducts, page: () => FilterAllProductsScreen()),
+
+    // TODO CHAT
+    GetPage(name: Routes.chat, page: () => ChatScreen()),
   ];
 }
 
@@ -137,5 +141,6 @@ class Routes {
   static const filterAllProducts = '/filter_all_products';
 
   static const map = '/map';
+  static const chat = '/chat';
 
 }

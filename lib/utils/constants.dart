@@ -175,6 +175,7 @@ class Const {
   static const String serviceCenter5 = 'https://i.postimg.cc/W4ytFtPQ/side-view-stylist-with-palette-applying-makeup-model-23-2147783893.jpg';
   static const String serviceCenter6 = 'https://i.postimg.cc/ZRFtkDjV/pretty-model-woman-beauty-salon-is-making-evening-make-up-231208-3586.jpg';
 
+  static const String KEY_UUID = 'other_user_uuid';
 
   // TODO VENDOR TYPES
   static const String KEY_VENDOR_STORE = 'store';

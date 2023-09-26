@@ -75,11 +75,14 @@ class BeautyCenterScreen extends StatelessWidget {
           onTap: () => Navigator.pop(context),
         ),
         actions: [
-          Container(
-            alignment: AlignmentDirectional.centerEnd,
-            margin: EdgeInsetsDirectional.only(end: 20.r),
-            child: SvgPicture.asset(
-                width: 24.w, height: 24.h, '${Const.icons}icon_chat.svg'),
+          GestureDetector(
+            child: Container(
+              alignment: AlignmentDirectional.centerEnd,
+              margin: EdgeInsetsDirectional.only(end: 20.r),
+              child: SvgPicture.asset(
+                  width: 24.w, height: 24.h, '${Const.icons}icon_chat.svg'),
+            ),
+            onTap: () => Get.toNamed(Routes.chat),
           ),
         ],
       ),

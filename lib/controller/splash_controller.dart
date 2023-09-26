@@ -5,6 +5,7 @@ import 'package:nilay/routes/routes.dart';
 import 'package:nilay/utils/app_helper.dart';
 import 'package:nilay/utils/constants.dart';
 import 'package:nilay/utils/preferences_manager.dart';
+import 'package:uuid/uuid.dart';
 
 class SplashController extends GetxController {
   bool? isBoarding = PreferencesManager.getAppData(key: Const.KEY_BOARDING);
@@ -12,6 +13,7 @@ class SplashController extends GetxController {
 
   @override
   void onInit() {
+    PreferencesManager.saveAppData(key: Const.KEY_UUID, value: Uuid().v4());
     startApp();
     super.onInit();
   }
