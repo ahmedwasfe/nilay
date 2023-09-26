@@ -51,13 +51,13 @@ class AppWidgets {
         ),
       );
 
-  static Widget CustomAnimationProgress() => Center(
+  static Widget CustomAnimationProgress({Color color = AppColors.colorAppMain}) => Center(
       child: Container(
           margin: const EdgeInsets.symmetric(vertical: 20),
           width: 40.w,
           height: 40.h,
           child: LoadingAnimationWidget.threeArchedCircle(
-              color: AppColors.colorAppMain, size: 25.h)));
+              color: color, size: 25.h)));
 
   static showSnackBar(
       {required BuildContext context,
@@ -216,13 +216,15 @@ class CachedImage extends StatelessWidget {
   double width = 272;
   double height = 159;
   BoxFit fit = BoxFit.cover;
+  Color progressColor = AppColors.colorAppMain;
   bool isLoading = true;
 
   CachedImage(
-      {required this.imageUrl,
+      {super.key, required this.imageUrl,
       this.width = 272,
       this.height = 159,
       this.fit = BoxFit.cover,
+        this.progressColor = AppColors.colorAppMain,
       this.isLoading = true});
 
   @override
@@ -234,7 +236,7 @@ class CachedImage extends StatelessWidget {
         imageUrl: imageUrl,
         // placeholder: (_, imageurl) => Container(),
         progressIndicatorBuilder: (_, imageUrl, downloaded) =>
-            isLoading ? AppWidgets.CustomAnimationProgress() : Container(),
+            isLoading ? AppWidgets.CustomAnimationProgress(color: progressColor) : Container(),
         // fadeOutCurve: Curves.,
         errorWidget: (_, imageUrl, error) => Container(
               width: width.w,

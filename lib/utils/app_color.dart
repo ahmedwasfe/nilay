@@ -62,6 +62,7 @@ class AppColors {
   static const colorOtherBG = Color(0xFFF9F9FA);
   static const colorPinBG = Color(0xFFEAEAEB);
   static const colorPinBG1 = Color(0xFFBABABA);
+  static const colorChat = Color(0xFFEAEAEA);
 
   static const colorBtnDisable = Color(0xFFEBEBEB);
   static const colorBtnTextDisable = Color(0xFF9C9D9E);
