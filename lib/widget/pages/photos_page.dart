@@ -52,7 +52,7 @@ class PhotosPage extends StatelessWidget {
               mainAxisSpacing: 20,
               crossAxisSpacing: 16,
               itemCount: _controller.listImages.length,
-              itemBuilder: (BuildContext context, int index) => PhotosItem(photo: _controller.listImages[index]),
+              itemBuilder: (_, index) => PhotosItem(photo: _controller.listImages[index]),
             ),
           ),
         ],

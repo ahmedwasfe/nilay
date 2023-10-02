@@ -8,6 +8,7 @@ class Const {
   static const String defaultImage = "https://i.postimg.cc/kX5Nvx5c/test.jpg";
   static const String defaultUserImage = "https://i.postimg.cc/7hGp1mBJ/user-image.png";
   static const String defaultUserImage1 = "https://i.postimg.cc/L617TZrq/portrait-young-beautiful-woman-gesticulating.jpg";
+  static const String appLogo = "https://i.postimg.cc/yYv6CQyF/logo.png";
 
   static const String sliderImage = "https://i.postimg.cc/4ySHjcJR/silder.png";
   static const String imageBeautifulCenter = "https://i.postimg.cc/MKdDVmVt/image-beautiful-center.png";
@@ -174,6 +175,29 @@ class Const {
   static const String serviceCenter4 = 'https://i.postimg.cc/FsTWLQ7j/make-up-artist-doing-professional-make-up-young-woman-104603-5351.jpg';
   static const String serviceCenter5 = 'https://i.postimg.cc/W4ytFtPQ/side-view-stylist-with-palette-applying-makeup-model-23-2147783893.jpg';
   static const String serviceCenter6 = 'https://i.postimg.cc/ZRFtkDjV/pretty-model-woman-beauty-salon-is-making-evening-make-up-231208-3586.jpg';
+
+
+  // TODO VIDEOS
+  static const String videoUrl =
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+  static const String video = 'https://video.bunnycdn.com/play/159303/8066db65-0f61-4eba-84d0-865715dc64c9';
+  static const String videoUrlLandscape =
+      "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4";
+  static const String videoUrlPortrait =
+      'https://assets.mixkit.co/videos/preview/mixkit-a-girl-blowing-a-bubble-gum-at-an-amusement-park-1226-large.mp4';
+  static const String longVideo =
+      "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+
+  static const String video720 =
+      "https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_10mb.mp4";
+
+  static const String video480 =
+      "https://www.sample-videos.com/video123/mp4/480/big_buck_bunny_480p_10mb.mp4";
+
+  static const String video240 =
+      "https://www.sample-videos.com/video123/mp4/240/big_buck_bunny_240p_10mb.mp4";
+
+  static const String video1 = 'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4';
 
   static const String KEY_UUID = 'other_user_uuid';
 
