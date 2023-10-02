@@ -36,7 +36,7 @@ import 'package:nilay/ui/vendors/stores/product/products_category_screen.dart';
 import 'package:nilay/ui/vendors/stores/product/products_screen.dart';
 import 'package:nilay/ui/vendors/stores/store_screen.dart';
 import 'package:nilay/ui/vendors/beauty_centers/beauty_centers_experts_screen.dart';
-import 'package:nilay/widget/vendors/beauty_centers/album_beauty_center_screen.dart';
+import 'package:nilay/ui/vendors/beauty_centers/album_beauty_center_screen.dart';
 
 class AppRoutes {
 

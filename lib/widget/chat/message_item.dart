@@ -69,7 +69,7 @@ class _MessageItemState extends State<MessageItem> {
                   isLoading: true,)),
           ),
         ),
-        const Spacer(),
+        // const Spacer(),
         Padding(
           padding: EdgeInsetsDirectional.only(top: 20.r, end: 20.r),
           child: AppText.medium(text: DateUtil.getFormattedTime(context: context, time: widget.message.sent!), fontSize: 13.sp),

@@ -7,7 +7,7 @@ import 'package:nilay/utils/app_color.dart';
 import 'package:nilay/utils/app_helper.dart';
 import 'package:nilay/utils/app_text.dart';
 import 'package:nilay/utils/constants.dart';
-import 'package:nilay/widget/vendors/stores/all_experts_vendor_item.dart';
+import 'package:nilay/widget/vendors/beauty_centers/all_experts_vendor_item.dart';
 
 class BeautyCenterExpertsScreen extends StatelessWidget {
   BeautyCenterExpertsScreen({super.key});
